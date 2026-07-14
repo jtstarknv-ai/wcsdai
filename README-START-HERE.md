@@ -1,5 +1,11 @@
 # WCSD AI Hub — Transfer Packet
 
+> **HOSTING MOVE IN PROGRESS (2026-07-13):** this site is moving from Vercel to
+> **Azure Static Web Apps**, deployed automatically from this GitHub repo
+> (`jtstarknv-ai/wcsdai`, branch `main`). See **AZURE-SETUP.md** for the one-time
+> portal setup. After cutover, the Vercel instructions below are LEGACY.
+
+
 Everything needed to keep working on the teacher AI Hub from another computer.
 Live site: **https://wcsdai.vercel.app** (Vercel project `wcsdai`, scope `jtstarknv-8681s-projects`).
 

@@ -1,0 +1,27 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/logos/*", "/*.pdf", "/*.png", "/*.html"]
+  },
+  "mimeTypes": {
+    ".webp": "image/webp",
+    ".pdf": "application/pdf"
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff"
+  },
+  "routes": [
+    {
+      "route": "/logos/*",
+      "headers": { "Cache-Control": "public, max-age=604800" }
+    },
+    {
+      "route": "/WCSD-TEACH-One-Pager.pdf",
+      "headers": { "Cache-Control": "public, max-age=3600" }
+    },
+    {
+      "route": "/index.html",
+      "headers": { "Cache-Control": "no-cache" }
+    }
+  ]
+}
