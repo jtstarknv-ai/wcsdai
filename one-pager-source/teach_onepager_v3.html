@@ -37,11 +37,12 @@
 
   /* TEACH rows */
   .trow{display:flex;gap:12px;align-items:center;border:1px solid var(--border);border-left:5px solid;border-radius:10px;padding:10px 15px;flex:1;position:relative;overflow:hidden}
-  .trow.t{background:#E8F1F9;border-left-color:#01528A}
-  .trow.e{background:#E2F3F0;border-left-color:#0E8C7F}
-  .trow.a{background:#FBF3D8;border-left-color:#DEB40A}
-  .trow.c{background:#FAE7E4;border-left-color:#B42318}
-  .trow.h{background:#EEE8F8;border-left-color:#6A3FB5}
+  .trow{background:#fff}
+  .trow.t{border-left-color:#01528A}
+  .trow.e{border-left-color:#0E8C7F}
+  .trow.a{border-left-color:#DEB40A}
+  .trow.c{border-left-color:#B42318}
+  .trow.h{border-left-color:#6A3FB5}
   .trow .wm{position:absolute;right:10px;top:4px;font-size:64px;font-weight:900;opacity:.10;line-height:1;letter-spacing:-.04em}
   .trow.t .wm{color:#01528A}.trow.e .wm{color:#0E8C7F}.trow.a .wm{color:#B8940A}.trow.c .wm{color:#B42318}.trow.h .wm{color:#6A3FB5}
   .trow .big{flex:none;width:42px;height:42px;border-radius:10px;display:block;line-height:42px;text-align:center;color:#fff;font-size:23px;font-weight:900;box-shadow:0 2px 6px rgba(11,36,64,.18)}
@@ -58,10 +59,11 @@
   .rp h3{font-size:12px;font-weight:900;color:var(--navy-deep);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
   .rp .sub{font-size:10px;color:var(--muted);margin:0 0 9px;line-height:1.5}
 
-  .rung{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px;border-radius:8px;padding:6px 9px;background:#F3F5F8}
+  .rung{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px;border-radius:8px;padding:7px 10px}
+  .rung.r1{background:#E8F1F9}.rung.r2{background:#E2F3F0}.rung.r3{background:#FBF3D8}.rung.r4{background:#FAE7E4}
   .rung:last-child{margin-bottom:0}
   .rung .rn{flex:none;width:19px;height:19px;border-radius:999px;color:#fff;font-size:10.5px;font-weight:900;display:block;line-height:19px;text-align:center;margin-top:1px}
-  .r1 .rn{background:#98A2B0}.r2 .rn{background:#76828F}.r3 .rn{background:#525E6C}.r4 .rn{background:#2B3542}
+  .r1 .rn{background:#003766}.r2 .rn{background:#0E8C7F}.r3 .rn{background:#B8940A}.r4 .rn{background:#B42318}
   .rung b{font-size:11px;color:var(--navy-deep)}
   .rung span{display:block;font-size:9.6px;color:#4a5462;line-height:1.4}
 
@@ -85,7 +87,7 @@
   /* prompt band */
   .pband{border:1px solid var(--border);border-radius:11px;padding:11px 13px 9px;background:#fff}
   .pband h3{font-size:12px;font-weight:900;color:var(--navy-deep);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-  .pband .sub{font-size:10px;color:var(--muted);margin-bottom:14px}
+  .pband .sub{font-size:10px;color:var(--muted);margin-bottom:11px}
   .sent{font-size:12.6px;line-height:2.5;font-weight:500;color:var(--ink)}
   .seg{padding:1.5px 4px;border-radius:4px 4px 0 0;border-bottom:2px solid;position:relative;font-weight:600}
   .seg i{position:absolute;left:2px;top:-11px;font-style:normal;font-size:7.2px;font-weight:900;letter-spacing:.08em}
@@ -94,11 +96,15 @@
   .s3{background:var(--hl3);border-color:var(--hl3l)}.s3 i{color:var(--hl3i)}
   .s4{background:var(--hl4);border-color:var(--hl4l)}.s4 i{color:var(--hl4i)}
   .s5{background:var(--hl5);border-color:var(--hl5l)}.s5 i{color:var(--hl5i)}
-  .pleg{display:flex;gap:12px;margin-top:8px;border-top:1px dashed var(--border);padding-top:7px}
-  .pleg div{display:flex;align-items:center;gap:6px;font-size:9px;color:var(--muted)}
-  .pleg .sw{width:14px;height:14px;border-radius:4px}
-  .pleg .sw.s1{border-bottom-width:3px}.pleg .sw{border-bottom-style:solid}
-  .pleg b{color:var(--navy-deep);font-size:9.6px}
+  .parts{display:flex;gap:8px;margin-bottom:15px}
+  .part{flex:1;border-radius:9px;padding:8px 6px 7px;border-bottom:3.5px solid;text-align:center}
+  .part b{display:block;font-size:13.5px;font-weight:900}
+  .part span{font-size:9.2px;color:#4a5462;font-weight:600}
+  .part.p1{background:var(--hl1);border-color:var(--hl1l)}.part.p1 b{color:var(--hl1i)}
+  .part.p2{background:var(--hl2);border-color:var(--hl2l)}.part.p2 b{color:var(--hl2i)}
+  .part.p3{background:var(--hl3);border-color:var(--hl3l)}.part.p3 b{color:var(--hl3i)}
+  .part.p4{background:var(--hl4);border-color:var(--hl4l)}.part.p4 b{color:var(--hl4i)}
+  .part.p5{background:var(--hl5);border-color:var(--hl5l)}.part.p5 b{color:var(--hl5i)}
 
   .ft{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:6px;font-size:8.6px;color:var(--muted)}
   .ft b{color:var(--navy-deep)}
@@ -204,7 +210,7 @@
           <div class="tool"><b>Khanmigo</b><span>AI tutor</span></div>
           <div class="tool"><b>MagicSchool</b><span>80+ tools</span></div>
         </div>
-        <p class="sub" style="margin:8px 0 0">Guides for each tool live on the Hub.</p>
+        
       </div>
     </div>
   </div>
@@ -212,6 +218,7 @@
   <div class="pband">
     <h3>Write a strong prompt</h3>
     <p class="sub">A prompt is just a sentence. Tell AI what you need, in order: Who, Why, What, And, How.</p>
+    <div class="parts"><div class="part p1"><b>Who</b><span>the role</span></div><div class="part p2"><b>Why</b><span>the context</span></div><div class="part p3"><b>What</b><span>the task</span></div><div class="part p4"><b>And</b><span>the parameters</span></div><div class="part p5"><b>How</b><span>the product</span></div></div>
     <p class="sent">As a
       <span class="seg s1"><i>WHO</i>6th grade science teacher in WCSD</span>,
       <span class="seg s2"><i>WHY</i>for my mixed-readiness class with limited devices</span>,
@@ -219,12 +226,6 @@
       <span class="seg s4"><i>AND</i>aligned to NGSS MS-ESS3-2 across three 60-minute periods</span>,
       <span class="seg s5"><i>HOW</i>so students build a model of how weather and climate create natural hazards</span>.
     </p>
-    <div class="pleg">
-      <div><span class="sw s1"></span><b>Who</b> the role</div>
-      <div><span class="sw s2"></span><b>Why</b> the context</div>
-      <div><span class="sw s3"></span><b>What</b> the task</div>
-      <div><span class="sw s4"></span><b>And</b> the parameters</div>
-      <div><span class="sw s5"></span><b>How</b> the product</div>
     </div>
   </div>
 
