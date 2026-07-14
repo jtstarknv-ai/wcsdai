@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The TEACH Framework, WCSD One-Pager</title>
+<style>
+  @page{size:letter;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --navy:#01528A; --navy-deep:#003766; --ink:#0B2440; --teal:#0E8C7F; --gold:#DEB40A;
+    --coral:#B42318; --violet:#6A3FB5; --green:#1E7F5C;
+    --border:#D9E2EC; --muted:#5B6472; --surface:#F4F7FA;
+    --hl1:#DCEDFA; --hl1l:#6FA7D4; --hl1i:#2F6491;
+    --hl2:#DFF2E3; --hl2l:#7FBF8E; --hl2i:#2E7346;
+    --hl3:#FBE4EC; --hl3l:#E08FAD; --hl3i:#A13D63;
+    --hl4:#FDEBD9; --hl4l:#E8A96C; --hl4i:#A05A19;
+    --hl5:#EBE5F7; --hl5l:#A793D6; --hl5i:#5F4B96;
+  }
+  body{font-family:'Lato','Carlito','Liberation Sans',sans-serif;color:var(--ink);
+       width:8.5in;height:11in;padding:.34in .38in .28in;display:flex;flex-direction:column;gap:8px;
+       background:linear-gradient(115deg,#EDF5FC 0%,#F5FAFF 30%,#FDFAF0 65%,#F1F8F6 100%)}
+
+  .hd{display:flex;align-items:center;gap:14px;padding-bottom:8px;
+      border-bottom:3.5px solid;border-image:linear-gradient(90deg,#01528A 0 20%,#0E8C7F 20% 40%,#DEB40A 40% 60%,#B42318 60% 80%,#6A3FB5 80% 100%) 1}
+  .hd .eyebrow{font-size:8.5px;font-weight:900;letter-spacing:.14em;color:var(--muted);margin-bottom:3px}
+  .hd h1{font-size:24px;font-weight:900;letter-spacing:-.01em;color:var(--navy-deep)}
+  .hd h1 .lt{font-weight:900}
+  .lt.t{color:#01528A}.lt.e{color:#0E8C7F}.lt.a{color:#B8940A}.lt.c{color:#B42318}.lt.h{color:#6A3FB5}
+  .hd .tag{font-size:9.5px;color:var(--muted);margin-top:3px;font-weight:600}
+  .hd img{height:46px;margin-left:auto}
+
+  .main{display:flex;gap:9px;flex:1;min-height:0}
+  .colL{flex:1.35;display:flex;flex-direction:column;gap:6px}
+  .colR{flex:1;display:flex;flex-direction:column;gap:8px}
+  .colR .rp{flex:1}
+
+  /* TEACH rows */
+  .trow{display:flex;gap:11px;align-items:center;border:1px solid var(--border);border-radius:10px;padding:10px 14px;background:#fff;flex:1;position:relative;overflow:hidden}
+  .trow .wm{position:absolute;right:10px;top:6px;font-size:60px;font-weight:900;opacity:.08;line-height:1;letter-spacing:-.04em}
+  .trow.t .wm{color:#01528A}.trow.e .wm{color:#0E8C7F}.trow.a .wm{color:#B8940A}.trow.c .wm{color:#B42318}.trow.h .wm{color:#6A3FB5}
+  .trow .big{flex:none;width:36px;height:36px;border-radius:9px;display:block;line-height:36px;text-align:center;color:#fff;font-size:20px;font-weight:900}
+  .trow.a .big{color:#2a2000}
+  .trow h2{font-size:13.5px;font-weight:900;color:var(--navy-deep)}
+  .trow .ph{font-size:9.8px;font-weight:700;font-style:italic;margin:2px 0 5px}
+  .trow.t .ph{color:#01528A}.trow.e .ph{color:#0E8C7F}.trow.a .ph{color:#8A6D00}.trow.c .ph{color:#B42318}.trow.h .ph{color:#6A3FB5}
+  .trow ul{list-style:none}
+  .trow li{font-size:9.2px;color:#3d4757;line-height:1.5;padding-left:10px;position:relative;margin-bottom:2.5px}
+  .trow li::before{content:"";position:absolute;left:0;top:5px;width:4px;height:4px;border-radius:999px;background:var(--border)}
+  .trow.t li::before{background:#01528A}.trow.e li::before{background:#0E8C7F}.trow.a li::before{background:#DEB40A}
+  .trow.c li::before{background:#B42318}.trow.h li::before{background:#6A3FB5}
+
+  /* right column panels */
+  .rp{border:1px solid var(--border);border-radius:10px;padding:11px 13px;background:#fff;display:flex;flex-direction:column;justify-content:space-evenly}
+  .rp h3{font-size:10.5px;font-weight:900;color:var(--navy-deep);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+  .rp .sub{font-size:8.6px;color:var(--muted);margin:-3px 0 8px;line-height:1.5}
+
+  .rung{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
+  .rung:last-child{margin-bottom:0}
+  .rung .rn{flex:none;width:16px;height:16px;border-radius:999px;color:#fff;font-size:9px;font-weight:900;display:block;line-height:16px;text-align:center;margin-top:1px}
+  .r1 .rn{background:#003766}.r2 .rn{background:#0E8C7F}.r3 .rn{background:#B8940A}.r4 .rn{background:#B42318}
+  .rung b{font-size:9.6px;color:var(--navy-deep)}
+  .rung span{display:block;font-size:8.5px;color:var(--muted);line-height:1.45}
+
+  .light{display:flex;gap:8px;align-items:flex-start;margin-bottom:9px}
+  .light:last-child{margin-bottom:0}
+  .light .dot{flex:none;width:11px;height:11px;border-radius:999px;margin-top:2px}
+  .light b{font-size:9.6px}
+  .light span{display:block;font-size:8.5px;color:var(--muted);line-height:1.45}
+  .lg .dot{background:#1E7F5C}.lg b{color:#1E7F5C}
+  .ly .dot{background:#DEB40A}.ly b{color:#8A6D00}
+  .lr .dot{background:#B42318}.lr b{color:#B42318}
+
+  .tools{display:flex;gap:6px}
+  .tool{flex:1;border:1px solid var(--border);border-radius:8px;padding:6px 4px;text-align:center}
+  .tool b{display:block;font-size:9px;font-weight:900;color:var(--navy-deep)}
+  .tool span{font-size:7.6px;color:var(--muted)}
+
+  /* prompt band */
+  .pband{border:1px solid var(--border);border-radius:11px;padding:11px 13px 9px;background:#fff}
+  .pband h3{font-size:10px;font-weight:900;color:var(--navy-deep);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+  .pband .sub{font-size:8px;color:var(--muted);margin-bottom:12px}
+  .sent{font-size:11.4px;line-height:2.5;font-weight:500;color:var(--ink)}
+  .seg{padding:1.5px 4px;border-radius:4px 4px 0 0;border-bottom:2px solid;position:relative;font-weight:600}
+  .seg i{position:absolute;left:2px;top:-9.5px;font-style:normal;font-size:6.3px;font-weight:900;letter-spacing:.08em}
+  .s1{background:var(--hl1);border-color:var(--hl1l)}.s1 i{color:var(--hl1i)}
+  .s2{background:var(--hl2);border-color:var(--hl2l)}.s2 i{color:var(--hl2i)}
+  .s3{background:var(--hl3);border-color:var(--hl3l)}.s3 i{color:var(--hl3i)}
+  .s4{background:var(--hl4);border-color:var(--hl4l)}.s4 i{color:var(--hl4i)}
+  .s5{background:var(--hl5);border-color:var(--hl5l)}.s5 i{color:var(--hl5i)}
+  .pleg{display:flex;gap:12px;margin-top:8px;border-top:1px dashed var(--border);padding-top:7px}
+  .pleg div{display:flex;align-items:center;gap:5px;font-size:7.6px;color:var(--muted)}
+  .pleg .sw{width:12px;height:12px;border-radius:4px}
+  .pleg .sw.s1{border-bottom-width:3px}.pleg .sw{border-bottom-style:solid}
+  .pleg b{color:var(--navy-deep);font-size:8.2px}
+
+  .ft{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:5px;font-size:7.4px;color:var(--muted)}
+  .ft b{color:var(--navy-deep)}
+</style>
+</head>
+<body>
+
+  <div class="hd">
+    <div>
+      <p class="eyebrow">WASHOE COUNTY SCHOOL DISTRICT &middot; AI HUB</p>
+      <h1>The <span class="lt t">T</span><span class="lt e">E</span><span class="lt a">A</span><span class="lt c">C</span><span class="lt h">H</span> Framework</h1>
+      <p class="tag">AI should enhance, not replace, intentional instruction, professional judgment, and district-approved curriculum.</p>
+    </div>
+    <img src="wcsd-logo-horizontal.png" alt="Washoe County School District logo">
+  </div>
+
+  <div class="main">
+    <div class="colL">
+      <div class="trow t"><span class="wm">T</span>
+        <div class="big" style="background:linear-gradient(150deg,#1B6FA8,#01528A)">T</div>
+        <div>
+          <h2>Thoroughly Evaluate</h2>
+          <p class="ph">You are the expert. AI is the draft.</p>
+          <ul>
+            <li>Review all AI-generated content for accuracy, bias, and appropriateness.</li>
+            <li>Ensure materials align to grade level and student needs.</li>
+            <li>Use professional judgment before using anything with students.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="trow e"><span class="wm">E</span>
+        <div class="big" style="background:linear-gradient(150deg,#2EC4B6,#0E8C7F)">E</div>
+        <div>
+          <h2>Engage with Curriculum</h2>
+          <p class="ph">AI serves your standards, not the other way around.</p>
+          <ul>
+            <li>Align AI use to standards, curriculum, and pacing guides.</li>
+            <li>Support your learning intentions and success criteria.</li>
+            <li>Prioritize district-adopted instructional resources.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="trow a"><span class="wm">A</span>
+        <div class="big" style="background:linear-gradient(150deg,#EFCD4D,#DEB40A)">A</div>
+        <div>
+          <h2>Adhere to Approved Tools</h2>
+          <p class="ph">Four tools, signed in with your district account.</p>
+          <ul>
+            <li>Approved tools meet privacy, security, and compliance standards.</li>
+            <li>They protect student data and PII far more completely than public tools.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="trow c"><span class="wm">C</span>
+        <div class="big" style="background:linear-gradient(150deg,#D9544B,#B42318)">C</div>
+        <div>
+          <h2>Commit to Safe &amp; Ethical Use</h2>
+          <p class="ph">No student PII. Ever. This is the line that doesn't move.</p>
+          <ul>
+            <li>Never enter student PII: names, IEP or 504 details, grades, or photos.</li>
+            <li>Use anonymized prompts. Describe the student, never name them.</li>
+            <li>Follow FERPA and WCSD policy.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="trow h"><span class="wm">H</span>
+        <div class="big" style="background:linear-gradient(150deg,#8A63D2,#6A3FB5)">H</div>
+        <div>
+          <h2>Harness the Potential of AI</h2>
+          <p class="ph">Spend the time it gives back on the work only you can do.</p>
+          <ul>
+            <li>Differentiate instruction to meet diverse learner needs.</li>
+            <li>Increase engagement, creativity, and accessibility for all students.</li>
+            <li>Support college, career, and future readiness.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="colR">
+      <div class="rp">
+        <h3>Human Agency Scale</h3>
+        <p class="sub">Agency means how much of the thinking stays with you. This scale says <b>when</b> to lean on AI; the stoplight below says <b>what</b> is allowed.</p>
+        <div class="rung r1"><span class="rn">1</span><div><b>Fully Human</b><span>You do the work. The right call when the thinking is the point.</span></div></div>
+        <div class="rung r2"><span class="rn">2</span><div><b>Human-Led, AI Support</b><span>AI brainstorms and drafts; you direct and decide. Most teacher work lives here.</span></div></div>
+        <div class="rung r3"><span class="rn">3</span><div><b>AI-Led, Human-Reviewed</b><span>AI produces near-final work; you inspect every line before it counts.</span></div></div>
+        <div class="rung r4"><span class="rn">4</span><div><b>Fully AI</b><span>Not allowed. If you didn't review it, it doesn't represent you.</span></div></div>
+      </div>
+
+      <div class="rp">
+        <h3>The stoplight, in one glance</h3>
+        <div class="light lg"><span class="dot"></span><div><b>Green, go:</b><span>lesson ideas, leveling texts, rubrics, exit tickets, rewording directions, sub plans.</span></div></div>
+        <div class="light ly"><span class="dot"></span><div><b>Yellow, judgment:</b><span>AI-built lessons, assessments, and feedback drafts. Strip names, apply T and E first.</span></div></div>
+        <div class="light lr"><span class="dot"></span><div><b>Red, never:</b><span>student PII, rosters or grades, IEP decisions, and any unapproved tool.</span></div></div>
+      </div>
+
+      <div class="rp">
+        <h3>Approved tools</h3>
+        <p class="sub">Signed in with your district account.</p>
+        <div class="tools">
+          <div class="tool"><b>Copilot</b><span>everyday AI</span></div>
+          <div class="tool"><b>Diffit</b><span>leveled texts</span></div>
+          <div class="tool"><b>Khanmigo</b><span>AI tutor</span></div>
+          <div class="tool"><b>MagicSchool</b><span>80+ tools</span></div>
+        </div>
+        <p class="sub" style="margin:8px 0 0">Step-by-step guides for each live on the AI Tools &amp; Guides page of the Hub.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pband">
+    <h3>Write a strong prompt</h3>
+    <p class="sub">A prompt is just a sentence. Tell AI what you need, in order: Who, Why, What, And, How.</p>
+    <p class="sent">As a
+      <span class="seg s1"><i>WHO</i>6th grade science teacher in WCSD</span>,
+      <span class="seg s2"><i>WHY</i>for my mixed-readiness class with limited devices</span>,
+      <span class="seg s3"><i>WHAT</i>create student directions and a rubric</span>,
+      <span class="seg s4"><i>AND</i>aligned to NGSS MS-ESS3-2 across three 60-minute periods</span>,
+      <span class="seg s5"><i>HOW</i>so students build a model of how weather and climate create natural hazards</span>.
+    </p>
+    <div class="pleg">
+      <div><span class="sw s1"></span><b>Who</b> the role</div>
+      <div><span class="sw s2"></span><b>Why</b> the context</div>
+      <div><span class="sw s3"></span><b>What</b> the task</div>
+      <div><span class="sw s4"></span><b>And</b> the parameters</div>
+      <div><span class="sw s5"></span><b>How</b> the product</div>
+    </div>
+  </div>
+
+  <div class="ft">
+    <span><b>WCSD AI Hub</b> &middot; A living document &middot; wcsdai.vercel.app &middot; ai@washoeschools.net</span>
+    <span>Built by WCSD teachers &middot; Updated July 2026</span>
+  </div>
+
+</body>
+</html>
