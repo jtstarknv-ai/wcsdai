@@ -968,6 +968,20 @@ section.band{margin-bottom:54px}
 /* flex-gap parents: keep word-size spacing around the colored TEACH */
 .cta{gap:4px}
 .xlink{gap:4px}
+
+/* ============ How It Works: modern step cards ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:stretch}
+.step{position:relative;min-width:0;border:1px solid var(--wcsd-border);border-radius:13px;padding:16px 16px 14px;
+  background:linear-gradient(180deg,#F8FBFE,#fff);box-shadow:var(--wcsd-shadow-1);overflow:hidden}
+.step::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#1B6FA8,#0E8C7F)}
+.step .sn{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:10px;
+  background:linear-gradient(135deg,#1B6FA8,#01528A);color:#fff;font-weight:800;font-size:14.5px;
+  box-shadow:0 3px 8px rgba(1,82,138,.25);margin-bottom:10px}
+.step h3{font-size:14.5px;line-height:1.3;margin:0 0 5px}
+.step p{font-size:12.8px}
+.step+.step::before{display:none}
+@media(max-width:940px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
 </style>
 </head>
 
