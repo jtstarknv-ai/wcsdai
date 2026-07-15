@@ -53,3 +53,22 @@ The Vercel deploy scripts (`deploy/deploy.ps1`) are legacy after cutover.
 
 Azure SWA redeploys whatever is on `main`; to roll back, `git revert` the bad commit and
 push. GitHub Actions history (repo > Actions tab) shows every deploy.
+
+## Contact form email (one-time, ~5 minutes)
+
+The repo ships a working `/api/contact` function that silently emails form submissions
+to ai@washoeschools.net. It needs one credential from you:
+
+1. Portal > Create a resource > **Communication Services** (same resource group). Name: `wcsd-aihub-comms`.
+2. Open it > **Email** > **Provision domains** > **Add an Azure managed domain** (free, instant,
+   no DNS work). Note the sender it gives you, like `DoNotReply@xxxxxx.azurecomm.net`.
+3. Communication Services resource > **Keys** > copy the **Connection string**.
+4. Static Web App (`wcsd-aihub`) > **Environment variables** (Application settings) > add:
+   - `ACS_CONNECTION_STRING` = the connection string
+   - `CONTACT_SENDER` = the DoNotReply sender address
+   - `CONTACT_TO` = ai@washoeschools.net (optional, this is the default)
+5. Save. No redeploy needed; settings apply to the API immediately.
+
+Until these are set, the form automatically falls back to opening the teacher's district
+email with the message prefilled, so nothing breaks in the meantime. Replies go to the
+teacher because the function sets their address as reply-to.
