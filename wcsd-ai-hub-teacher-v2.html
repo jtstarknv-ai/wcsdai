@@ -1009,6 +1009,12 @@ section.band{margin-bottom:54px}
 .gterm p{font-size:12.5px;color:var(--wcsd-text-muted);line-height:1.5;margin:0}
 @media(max-width:940px){.gloss{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.gloss{grid-template-columns:1fr}}
+
+/* glossary search */
+.gsearchwrap{position:relative;margin:0 0 14px}
+.gsearchwrap svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--wcsd-text-muted);pointer-events:none}
+#glossSearch{width:100%;font-family:inherit;font-size:14.5px;color:var(--wcsd-navy-900);padding:11px 14px 11px 38px;border:1.5px solid var(--wcsd-border-strong);border-radius:11px;background:#fff}
+#glossSearch:focus{outline:none;border-color:var(--wcsd-navy-700);box-shadow:0 0 0 3px rgba(1,82,138,.15)}
 </style>
 </head>
 
@@ -2077,15 +2083,7 @@ section.band{margin-bottom:54px}
   </div>
   <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical Use</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
   <div class="container spad">
-    <nav class="jumps" aria-label="On this page">
-      <span class="jlbl">Jump to</span>
-      <a href="#faq-t">T &middot; Thoroughly Evaluate</a>
-      <a href="#faq-e">E &middot; Engage with Curriculum</a>
-      <a href="#faq-a">A &middot; Adhere to Approved Tools</a>
-      <a href="#faq-c">C &middot; Commit to Safe &amp; Ethical Use</a>
-      <a href="#faq-h">H &middot; Harness the Potential</a>
-      <a href="#faq-glossary" style="color:var(--wcsd-navy-900);border-color:var(--wcsd-navy-700);font-weight:800">Glossary</a>
-    </nav>
+    
     
     <div class="panel" id="faq-t" style="border-top:4px solid #01528A;scroll-margin-top:84px">
       <div class="secthead">
@@ -2134,6 +2132,11 @@ section.band{margin-bottom:54px}
         </div>
         <div><h2>AI Vocabulary &amp; Glossary</h2><div class="ssm">The running list from your AI Strikeforce colleagues. These same terms show hover definitions wherever they appear across the Hub.</div></div>
       </div>
+      <div class="gsearchwrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="glossSearch" type="search" placeholder="Search for a term (agency, hallucination, PII...)" aria-label="Search the glossary">
+      </div>
+      <p id="glossEmpty" class="catnote" style="display:none;margin:0 0 10px">No matching term yet. Send it to ai@washoeschools.net and we will add it.</p>
       <div class="gloss"><div class="gterm"><b>504</b><p>Accommodations plan for a student with a disability (Section 504).</p></div><div class="gterm"><b>Agency</b><p>How much of the thinking and deciding stays with you, the human. High agency: you do the work. Low agency: AI drafts, you review every line.</p></div><div class="gterm"><b>Agents</b><p>AI that can take multi-step actions on its own, like a semi-autonomous assistant. Anything agentic stays supervised.</p></div><div class="gterm"><b>AI</b><p>Technology that performs tasks that usually need human intelligence: language, patterns, problem-solving, prediction.</p></div><div class="gterm"><b>AI Guardrails</b><p>The safeguards and limits that keep an AI system operating safely and within defined boundaries.</p></div><div class="gterm"><b>Bias</b><p>Output errors caused by skewed training data, which can make AI results inaccurate, offensive, or misleading.</p></div><div class="gterm"><b>Constraints</b><p>Boundaries you set in a prompt, like “keep it under 100 words” or “return a table.”</p></div><div class="gterm"><b>Context</b><p>Background information that helps AI understand the setting, audience, and tone you need.</p></div><div class="gterm"><b>DOK</b><p>Depth of Knowledge, a four-level scale of thinking: recall, apply, reason, extend.</p></div><div class="gterm"><b>ELLevation</b><p>The district's platform for supporting multilingual learners: language data, strategies, and resources.</p></div><div class="gterm"><b>Ethical AI</b><p>Using AI in ways that are fair, transparent, safe, accountable, and respectful of privacy.</p></div><div class="gterm"><b>FERPA</b><p>The federal law protecting student education records and personal information.</p></div><div class="gterm"><b>Generative AI</b><p>AI that creates new content: text, images, code, audio, or video.</p></div><div class="gterm"><b>GLAD</b><p>Guided Language Acquisition Design: strategies that build academic language alongside content.</p></div><div class="gterm"><b>Hallucination</b><p>When AI generates something that sounds believable but is inaccurate or made up.</p></div><div class="gterm"><b>Human in the Loop</b><p>Keeping a person in the decision process: you review and approve before AI output counts.</p></div><div class="gterm"><b>IEP</b><p>Individualized Education Program: the legal plan for a student receiving special education services.</p></div><div class="gterm"><b>Input (The “Ask”)</b><p>What you feed the AI: text, files, images. In an LLM, a specific text input is a prompt.</p></div><div class="gterm"><b>Iteration</b><p>Revising and re-running a prompt to get a better result. The first answer is a draft.</p></div><div class="gterm"><b>Kagan</b><p>Named cooperative learning routines, like numbered heads together, that get every student participating.</p></div><div class="gterm"><b>Model</b><p>The AI system that processes your input and generates the response. Copilot is one.</p></div><div class="gterm"><b>NGSS</b><p>Next Generation Science Standards, the base for Nevada's science standards.</p></div><div class="gterm"><b>Output (The “Result”)</b><p>What the AI produces from your input: the draft, answer, or artifact you then review.</p></div><div class="gterm"><b>Parameters</b><p>The values that shape an output, like length 200 words, audience beginners, tone friendly.</p></div><div class="gterm"><b>PBL</b><p>Project-based learning: students learn through an extended, real-world project with a final product.</p></div><div class="gterm"><b>PII</b><p>Personally identifiable information: anything that could identify a student, like a name, ID, birthdate, or photo.</p></div><div class="gterm"><b>PLC</b><p>Professional learning community: a teacher team that meets regularly to plan from student learning.</p></div><div class="gterm"><b>Prompt</b><p>The instruction you give an AI. On this site: one sentence with Who, Why, What, And, How.</p></div><div class="gterm"><b>SEL</b><p>Social-emotional learning: managing emotions, building relationships, making responsible decisions.</p></div><div class="gterm"><b>Shift + Enter</b><p>In Copilot, Shift + Enter starts a new line without sending. Enter sends the message.</p></div><div class="gterm"><b>Socratic Discussion</b><p>A student-led format: question ideas and defend claims with evidence.</p></div><div class="gterm"><b>Specificity</b><p>Clear, detailed instructions. The more specific the prompt, the better the response.</p></div><div class="gterm"><b>Tier 1 (MTSS)</b><p>The universal instruction and expectations every student receives; Tiers 2 and 3 add targeted support.</p></div><div class="gterm"><b>Tiers 1-3 (Vocabulary)</b><p>Word tiers: everyday words, cross-subject academic words, technical terms.</p></div><div class="gterm"><b>UDL</b><p>Universal Design for Learning: plan multiple ways to take in material, engage, and show mastery.</p></div></div>
     </div>
     <p class="catnote" style="margin-top:18px"><b>Don't see your question? Missing a word?</b> Send it to ai@washoeschools.net and we will add it here.</p>
@@ -2658,6 +2661,21 @@ document.querySelectorAll('.ucx').forEach(function(wrap){
     });
   });
 });
+
+/* Glossary search */
+(function(){
+  var inp=document.getElementById('glossSearch'); if(!inp) return;
+  var cards=[].slice.call(document.querySelectorAll('.gterm'));
+  var empty=document.getElementById('glossEmpty');
+  inp.addEventListener('input',function(){
+    var q=inp.value.trim().toLowerCase(), shown=0;
+    cards.forEach(function(c){
+      var hit=!q || c.textContent.toLowerCase().indexOf(q)>-1;
+      c.style.display=hit?'':'none'; if(hit)shown++;
+    });
+    if(empty) empty.style.display=shown?'none':'block';
+  });
+})();
 
 /* ================= INIT ================= */
 if(document.getElementById('mondayList')) renderMonday('elem');
