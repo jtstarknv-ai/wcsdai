@@ -134,7 +134,7 @@ h2.bar,.panel-head h2{display:flex;align-items:center;gap:10px;font-size:18px;fo
   color:var(--wcsd-navy-700);margin:0;letter-spacing:-.01em}
 h2.bar::before,.panel-head h2::before{content:"";width:4px;height:20px;border-radius:2px;flex-shrink:0;
   background:linear-gradient(180deg,var(--wcsd-gold-500),var(--wcsd-gold-300))}
-.lede{font-size:14.5px;color:var(--wcsd-text-muted);line-height:1.6;margin:6px 0 18px;max-width:760px}
+.lede{font-size:14.5px;color:var(--wcsd-text-muted);line-height:1.6;margin:6px 0 18px;max-width:none}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .grid2c{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 @media(max-width:920px){.grid3{grid-template-columns:1fr}.grid2c{grid-template-columns:1fr}}
@@ -965,6 +965,9 @@ section.band{margin-bottom:54px}
 .tclr i:nth-of-type(4){color:#B42318}
 .tclr i:nth-of-type(5){color:#6A3FB5}
 .navlinks a.active .tclr i{color:#fff}
+/* flex-gap parents: keep word-size spacing around the colored TEACH */
+.cta{gap:4px}
+.xlink{gap:4px}
 </style>
 </head>
 
@@ -1220,7 +1223,7 @@ section.band{margin-bottom:54px}
         </div>
         <div class="toolrow">
           <div class="tklogo"><img src="logos/diffit_t.png" alt="Diffit" loading="lazy"></div>
-          <div><div class="tn">Diffit</div><div class="td">One article, every reading level. The SPED and multilingual workhorse.</div></div>
+          <div><div class="tn">Diffit</div><div class="td">One text, every reading level. Built for differentiation.</div></div>
           <div class="tgo"><a class="xlink" href="#tools" data-tooltab="diffit">Guide</a><a class="xlink ext" href="https://web.diffit.me" target="_blank" rel="noopener">Open Diffit &#8599;</a></div>
         </div>
         <div class="toolrow">
@@ -1717,33 +1720,16 @@ section.band{margin-bottom:54px}
   </div>
   <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical Use</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
   <div class="container spad">
-    <div class="tabs" role="tablist" aria-label="Tool guides">
-      <button class="tab active" role="tab" id="rtab-copilot" aria-controls="tab-copilot" aria-selected="true" data-tab="copilot">Copilot</button>
-      <button class="tab" role="tab" id="rtab-diffit" aria-controls="tab-diffit" aria-selected="false" tabindex="-1" data-tab="diffit">Diffit</button>
-    </div>
-
-        <div class="tpane show" id="tab-copilot" role="tabpanel" aria-labelledby="rtab-copilot" tabindex="0">
+    <div class="tabs" role="tablist" aria-label="Tool guides"><button class="tab active" role="tab" id="rtab-copilot" aria-controls="tab-copilot" aria-selected="true" data-tab="copilot">Copilot</button><button class="tab" role="tab" id="rtab-diffit" aria-controls="tab-diffit" aria-selected="false" tabindex="-1" data-tab="diffit">Diffit</button><button class="tab" role="tab" id="rtab-khanmigo" aria-controls="tab-khanmigo" aria-selected="false" tabindex="-1" data-tab="khanmigo">Khanmigo</button><button class="tab" role="tab" id="rtab-magicschool" aria-controls="tab-magicschool" aria-selected="false" tabindex="-1" data-tab="magicschool">MagicSchool</button></div>
+    <div class="tpane show" id="tab-copilot" role="tabpanel" aria-labelledby="rtab-copilot" tabindex="0">
       <div class="panel">
-        <div class="toolhead">
-          <div class="tic brandtic"><img src="logos/copilot_t.png" alt="Microsoft Copilot"></div>
-          <div>
-            <h3>Microsoft Copilot</h3>
-            <p class="tsub">Our primary AI tool · copilot.microsoft.com · sign in with your district account</p>
-          </div>
-        </div>
-        <div class="callout">
-          <b>Why signing in matters:</b> with your @washoeschools.net account, Copilot runs with enterprise data protection. Your prompts and responses are never used to train AI models, your chats are encrypted, and your work stays inside the WCSD environment. Look for the green shield once you're signed in. Without it, you're using a public tool and the guardrails change.
-        </div>
-        <h2 class="h2sec first"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>What It Does For Your Week</h2>
-        <div class="grid3">
-          <div class="mini"><h3>Planning And Drafting</h3><p>Lesson ideas, leveled passages, rubrics, sub plans, newsletters, agendas. Anything that starts as a blank page.</p></div>
-          <div class="mini"><h3>Copilot's Built-In Lesson Workspace</h3><p>Inside the Microsoft 365 Copilot app: standards-aligned lesson plans, quizzes that export straight to Forms, rubrics, flashcards, and reading-level adaptation.</p></div>
-          <div class="mini"><h3>Thinking Out Loud</h3><p>Paste your draft and ask what's unclear. Ask it to argue the other side. Ask what a parent might misread. It's a tireless thought partner.</p></div>
-        </div>
-        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/></svg></span>Step-By-Step: Do Real Work With Copilot</h2>
-        <p class="lede" style="margin-top:-2px">Copilot includes a guided lesson workspace for teachers (Microsoft labels its tab "Teach", which has no relation to our TEACH framework), free with your district account (no paid Copilot license needed). Open it at <a href="https://m365.cloud.microsoft/teach" target="_blank" rel="noopener" style="color:var(--wcsd-navy-700);font-weight:600">m365.cloud.microsoft/teach</a> or in the Microsoft 365 Copilot app on web, Windows, or Mac. These three walkthroughs come straight from Microsoft's documentation. Microsoft updates it often, so a button may move, but the flow stays the same.</p>
-
-        <div class="acc">
+        <div class="toolhead"><div class="tic brandtic"><img src="logos/copilot_t.png" alt="Microsoft Copilot"></div>
+          <div><h3>Microsoft Copilot</h3><p class="tsub">Our primary AI tool &middot; copilot.microsoft.com &middot; sign in with your district account</p></div></div>
+        <div class="callout"><b>Why signing in matters:</b> with your @washoeschools.net account, Copilot runs with enterprise data protection. Your prompts and responses are never used to train AI models, your chats are encrypted, and your work stays inside the WCSD environment. Look for the green shield once you're signed in. Without it, you're using a public tool and the guardrails change.</div>
+        <h2 class="h2sec first"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>How It Works</h2>
+        <div class="steps"><div class="step"><span class="sn">1</span><h3>Sign In</h3><p>Go to copilot.microsoft.com and sign in with your @washoeschools.net account. Confirm the green shield.</p></div><div class="step"><span class="sn">2</span><h3>Ask With The Five Parts</h3><p>One sentence: Who, Why, What, And, How. The Prompting AI page has the full pattern.</p></div><div class="step"><span class="sn">3</span><h3>Ground It In Your Materials</h3><p>Attach or paste your curriculum excerpt, unit plan, or standard. Grounding is the biggest quality boost.</p></div><div class="step"><span class="sn">4</span><h3>Review, Revise, Own It</h3><p>Re-prompt until it's right, then verify every fact before it reaches students.</p></div></div>
+        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/></svg></span>Step-By-Step Guides</h2>
+        <p class="lede" style="margin-top:-2px">Copilot includes a guided lesson workspace for teachers (Microsoft labels its tab "Teach", which has no relation to our <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework), free with your district account (no paid Copilot license needed). Open it at <a href="https://m365.cloud.microsoft/teach" target="_blank" rel="noopener" style="color:var(--wcsd-navy-700);font-weight:600">m365.cloud.microsoft/teach</a> or in the Microsoft 365 Copilot app on web, Windows, or Mac. These walkthroughs come straight from Microsoft's documentation. Microsoft updates it often, so a button may move, but the flow stays the same.</p><div class="acc">
           <button class="ah" aria-expanded="false"><span>Guide 1 · Build a standards-aligned lesson plan &nbsp;<span class="chip teal">~10 min</span></span><span class="car">›</span></button>
           <div class="ab">
             <ol>
@@ -1799,48 +1785,52 @@ section.band{margin-bottom:54px}
           </div>
         </div>
 
-        <p class="gnote">The lesson workspace also makes flashcards, and its Modify tools can align existing materials to standards, differentiate instructions, change reading level (with a glossary option), and add real-world, scientific, or historical examples. Fill-in-the-blanks is listed as coming soon. Teach is for faculty and staff with a district Microsoft 365 education license; students don't see it. If you don't see Teach, check with IT.</p>
-
-        <h2 class="h2sec"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="17" r="1.6"/></svg></span>Where It Stumbles (And What To Do)</h2>
-        <div class="grid3">
-          <div class="mini"><h3>Math And Facts</h3><p>It's confident even when it's wrong. Check every number, date, and citation before it counts. Evaluate, Verify, Edit, Revise. You're responsible.</p></div>
-          <div class="mini"><h3>Teacher-Centered Defaults</h3><p>First drafts of lessons skew lecture-heavy. Re-prompt: "Rebuild this around student discussion and a hands-on activity. Cut my talk time in half."</p></div>
-          <div class="mini"><h3>Generic First Answers</h3><p>A vague ask gets a vague answer. Give it a goal, context, expectations, and a source. The pattern below fixes most weak outputs.</p></div>
-        </div>
-        <h2 class="h2sec"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>Writing Strong Prompts</h2>
-        <p class="lede" style="margin-top:-2px">The full prompt structure, the five parts (Who, Why, What, And, How) and the good, better, best examples, lives on the <a href="#prompting" style="color:var(--wcsd-navy-700);font-weight:600">Prompting page</a>. One Copilot-specific tip: it doesn't save or share chats well, so when a prompt works, keep it.</p>
+        <p class="gnote">The lesson workspace also makes flashcards, and its Modify tools can align existing materials to standards, differentiate instructions, change reading level (with a glossary option), and add real-world, scientific, or historical examples. It is for faculty and staff with a district Microsoft 365 education license; students don't see it. If the "Teach" tab doesn't appear in your Copilot app, check with IT.</p>
+        <h2 class="h2sec"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></span>Moves Worth Knowing</h2>
+        <div class="grid2c"><div class="mini"><h3>Planning And Drafting</h3><p>Lesson ideas, leveled passages, rubrics, sub plans, newsletters, agendas. Anything that starts as a blank page.</p></div><div class="mini"><h3>Copilot's Built-In Lesson Workspace</h3><p>Standards-aligned lesson plans, quizzes that export straight to Forms, rubrics, flashcards, and reading-level adaptation. See the guides above.</p></div><div class="mini"><h3>Thinking Out Loud</h3><p>Paste your draft and ask what's unclear. Ask it to argue the other side. Ask what a parent might misread. It's a tireless thought partner.</p></div><div class="mini"><h3>Keep Your Best Prompts</h3><p>Copilot doesn't save or share chats well. When a prompt works, paste it into a doc, name it, and reuse it.</p></div></div>
+        <div class="callout warn" style="margin-top:18px"><b>Where it stumbles:</b> math, dates, and citations (confidently wrong, so check every number); teacher-centered first drafts (re-prompt for student discussion and checks for understanding); and generic answers to vague asks (use the five parts). You review everything before it reaches students.</div>
       </div>
     </div>
-
     <div class="tpane" id="tab-diffit" role="tabpanel" aria-labelledby="rtab-diffit" tabindex="0">
       <div class="panel">
-        <div class="toolhead">
-          <div class="tic brandtic"><img src="logos/diffit_t.png" alt="Diffit"></div>
-          <div>
-            <h3>Diffit</h3>
-            <p class="tsub">Differentiation workhorse · web.diffit.me · the go-to for SPED and multilingual learners</p>
-          </div>
-        </div>
-        <div class="callout">
-          <b>One article, every reading level in your room.</b> Every student gets the same ideas, the same standard, the same class discussion, each at a level they can comfortably access. Different on-ramps, same destination.
-        </div>
+        <div class="toolhead"><div class="tic brandtic"><img src="logos/diffit_t.png" alt="Diffit"></div>
+          <div><h3>Diffit</h3><p class="tsub">Leveled texts, vocabulary, and question sets &middot; web.diffit.me</p></div></div>
+        <div class="callout"><b>What it does:</b> Diffit takes one text and rewrites it at the reading levels you choose, then generates the vocabulary list and question sets to match. Use it when the whole class needs the same content with different entry points. You pick the levels, you review the output.</div>
         <h2 class="h2sec first"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>How It Works</h2>
-        <div class="steps">
-          <div class="step"><span class="sn">1</span><h3>Feed It Anything</h3><p>Paste a text, a topic, a YouTube link, or an article URL.</p></div>
-          <div class="step"><span class="sn">2</span><h3>Pick Your Levels</h3><p>Choose grade or reading levels. Diffit rewrites the passage and keeps the core meaning.</p></div>
-          <div class="step"><span class="sn">3</span><h3>Get The Full Packet</h3><p>Leveled passage, vocabulary list with definitions, and question sets, all generated together.</p></div>
-          <div class="step"><span class="sn">4</span><h3>Edit And Export</h3><p>Everything stays editable. Send to Google Docs, Slides, Forms, or print. You review before students see it.</p></div>
-        </div>
-        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></span>Moves Worth Knowing</h2>
-        <div class="grid2c">
-          <div class="mini"><h3>For Special Education</h3><p>Re-level your core text to match <span class="dfn" tabindex="0" data-tip="Individualized Education Program: the legal plan for a student receiving special education services.">IEP</span> accommodation levels, chunk it into smaller sections, and generate comprehension checks at each level. Same rigor, accessible entry. Accommodations honored without building separate materials from scratch.</p></div>
-          <div class="mini"><h3>For Multilingual Learners</h3><p>Generate the passage in English and a translated version side by side, add a vocabulary preview with student-friendly definitions, and pull sentence starters for discussion. For high-stakes family communication, have a human speaker verify the translation.</p></div>
-          <div class="mini"><h3>Stations And Small Groups</h3><p>One article becomes three versions in about two minutes. Run the same content across your groups without anyone getting the "easy packet" stigma. The versions look the same.</p></div>
-          <div class="mini"><h3>Sub Plans And Intervention</h3><p>Build a self-contained reading packet with questions and vocabulary in minutes. <span class="dfn" tabindex="0" data-tip="Vocabulary tiers: Tier 1 words are everyday words, Tier 2 words are high-value academic words used across subjects, Tier 3 words are subject-specific technical terms.">Tier 2</span> and <span class="dfn" tabindex="0" data-tip="Vocabulary tiers: Tier 1 words are everyday words, Tier 2 words are high-value academic words used across subjects, Tier 3 words are subject-specific technical terms.">Tier 3</span> materials at the right level, fast.</p></div>
-        </div>
-        <div class="callout warn" style="margin-top:18px">
-          <b>Same rule as everywhere:</b> no student names or identifying details go into Diffit, and you review every passage before it reaches students. Leveling can occasionally flatten nuance. You're the rigor check.
-        </div>
+        <div class="steps"><div class="step"><span class="sn">1</span><h3>Feed It Anything</h3><p>Paste a text, a topic, a YouTube link, or an article URL.</p></div><div class="step"><span class="sn">2</span><h3>Pick Your Levels</h3><p>Choose grade or reading levels. Diffit rewrites the passage and keeps the core meaning.</p></div><div class="step"><span class="sn">3</span><h3>Get The Full Packet</h3><p>Leveled passage, vocabulary list with definitions, and question sets, all generated together.</p></div><div class="step"><span class="sn">4</span><h3>Edit And Export</h3><p>Everything stays editable. Send to Google Docs, Slides, Forms, or print. You review before students see it.</p></div></div>
+        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/></svg></span>Step-By-Step Guides</h2>
+        <div class="acc"><button class="ah" aria-expanded="false"><span>Guide 1 &middot; Level A Text At Three Reading Levels &nbsp;<span class="chip teal">~5 min</span></span><span class="car">&#8250;</span></button><div class="ab"><ol><li><b>Go to web.diffit.me</b> and sign in with your district account.</li><li><b>Feed it your source:</b> paste a text, an article URL, a YouTube link, or just a topic.</li><li><b>Pick the reading levels</b> your class needs. Two or three levels covers most rooms.</li><li><b>Generate.</b> You get the leveled passage, a vocabulary list with definitions, and question sets, together.</li><li><b>Edit, then export</b> to Google Docs, Slides, Forms, or print.</li></ol><div class="callout warn"><b>Watch for:</b> compare each level against the original. Leveling can flatten nuance, and you are the rigor check.</div></div></div><div class="acc"><button class="ah" aria-expanded="false"><span>Guide 2 &middot; Build A Sub-Ready Reading Packet &nbsp;<span class="chip teal">~10 min</span></span><span class="car">&#8250;</span></button><div class="ab"><ol><li><b>Start from your current unit:</b> a topic or text students are already working on.</li><li><b>Generate at the levels you need</b> so every student can work independently.</li><li><b>Keep it together:</b> leveled passage, vocabulary, and questions as one packet.</li><li><b>Add plain directions</b> a guest teacher can read aloud, with timing for each part.</li><li><b>Export to Docs and print.</b> Done: a self-running reading block.</li></ol><div class="callout warn"><b>Watch for:</b> no student names or identifying details in the packet, ever.</div></div></div>
+        <h2 class="h2sec"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></span>Moves Worth Knowing</h2>
+        <div class="grid2c"><div class="mini"><h3>For Differentiation</h3><p>Re-level your core text to the levels your class needs, chunk it into smaller sections, and generate comprehension checks at each level. Same rigor, more entry points, and documented accommodations honored without building separate materials from scratch.</p></div><div class="mini"><h3>Translations And Vocabulary Support</h3><p>Generate the passage in English and a translated version side by side, add a vocabulary preview with student-friendly definitions, and pull sentence starters for discussion. A fluent speaker verifies anything high-stakes.</p></div><div class="mini"><h3>Stations And Small Groups</h3><p>One article becomes three versions in about two minutes. Run the same content across your groups; the versions look the same, so nobody gets the "easy packet" stigma.</p></div><div class="mini"><h3>Sub Plans And Intervention</h3><p>Build a self-contained reading packet with questions and vocabulary in minutes. <span class="dfn" tabindex="0" data-tip="Vocabulary tiers: Tier 1 words are everyday words, Tier 2 words are high-value academic words used across subjects, Tier 3 words are subject-specific technical terms.">Tier 2</span> and <span class="dfn" tabindex="0" data-tip="Vocabulary tiers: Tier 1 words are everyday words, Tier 2 words are high-value academic words used across subjects, Tier 3 words are subject-specific technical terms.">Tier 3</span> materials at the right level, fast.</p></div></div>
+        <div class="callout warn" style="margin-top:18px"><b>Same rule as everywhere:</b> no student names or identifying details go into Diffit, and you review every passage before it reaches students. Leveling can occasionally flatten nuance. You're the rigor check.</div>
+      </div>
+    </div>
+    <div class="tpane" id="tab-khanmigo" role="tabpanel" aria-labelledby="rtab-khanmigo" tabindex="0">
+      <div class="panel">
+        <div class="toolhead"><div class="tic brandtic"><img src="logos/khanmigo_t.png" alt="Khanmigo"></div>
+          <div><h3>Khanmigo</h3><p class="tsub">Khan Academy's AI tutor and teacher tools &middot; free for WCSD through Clever</p></div></div>
+        <div class="callout"><b>Log in through Clever first.</b> Go to <a href="https://clever.com/in/washoe" target="_blank" rel="noopener" style="color:var(--wcsd-navy-700);font-weight:600">clever.com/in/washoe</a>, sign in with your district account, and open the Khan Academy tile. That links your WCSD account and unlocks Khanmigo's teacher tools at no cost. Enter directly at khanmigo.ai and you may be asked to pay.</div>
+        <h2 class="h2sec first"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>How It Works</h2>
+        <div class="steps"><div class="step"><span class="sn">1</span><h3>Open Clever, Pick Khan Academy</h3><p>clever.com/in/washoe, district login, Khan Academy tile.</p></div><div class="step"><span class="sn">2</span><h3>Open The Khanmigo Teacher Tools</h3><p>They appear inside Khan Academy once your account links.</p></div><div class="step"><span class="sn">3</span><h3>Give It Context</h3><p>The five parts work here too: Who, Why, What, And, How.</p></div><div class="step"><span class="sn">4</span><h3>Review, Then Use</h3><p>Verify accuracy and fit before anything reaches students.</p></div></div>
+        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/></svg></span>Step-By-Step Guides</h2>
+        <div class="acc"><button class="ah" aria-expanded="false"><span>Guide 1 &middot; Get Free Access Through Clever &nbsp;<span class="chip teal">~3 min</span></span><span class="car">&#8250;</span></button><div class="ab"><ol><li><b>Go to <a href="https://clever.com/in/washoe" target="_blank" rel="noopener" style="color:var(--wcsd-navy-700)">clever.com/in/washoe</a></b> and sign in with your district account.</li><li><b>Pick the Khan Academy tile.</b> That links your WCSD account, and the teacher tools unlock at no cost.</li><li><b>Bookmark it.</b> Always enter through Clever; going to the site directly may ask you to pay.</li><li><b>Find the teacher tools</b> under Khanmigo once you're in Khan Academy.</li></ol><div class="callout"><b>Heads up:</b> if the Khan Academy tile is missing from your Clever portal, check with IT.</div></div></div><div class="acc"><button class="ah" aria-expanded="false"><span>Guide 2 &middot; Create With The Teacher Tools &nbsp;<span class="chip teal">~10 min</span></span><span class="car">&#8250;</span></button><div class="ab"><ol><li><b>Pick a tool</b> that matches the task: lesson hook, exit ticket, discussion questions, leveled explanations.</li><li><b>Give it context with the five parts:</b> Who, Why, What, And, How, plus your Khan course or unit if you use one.</li><li><b>Review every item</b> like you would any AI draft: accuracy, level, and fit for your students.</li><li><b>Copy or assign.</b> Export what you keep into your own materials.</li></ol><div class="callout warn"><b>Watch for:</b> check math items especially; verify before anything counts.</div></div></div>
+        <h2 class="h2sec"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></span>Moves Worth Knowing</h2>
+        <div class="grid2c"><div class="mini"><h3>Lesson Hooks And Exit Tickets</h3><p>Quick generators tied to what you're teaching, reviewed and edited by you.</p></div><div class="mini"><h3>Practice Tied To Khan Courses</h3><p>If your class uses Khan Academy content, Khanmigo can point students to aligned practice.</p></div><div class="mini"><h3>A Tutor That Doesn't Hand Out Answers</h3><p>Khanmigo guides students step by step instead of solving for them. Any student-facing use follows district guidance.</p></div><div class="mini"><h3>Refresh Your Own Content Knowledge</h3><p>Ask it to re-explain a concept three ways before you teach it tomorrow.</p></div></div>
+        <div class="callout warn" style="margin-top:18px"><b>Same rule as everywhere:</b> no student names or <span class="dfn" tabindex="0" data-tip="Personally identifiable information: anything that could identify a specific student, such as a name, student number, birthdate, photo, or IEP details.">PII</span>, you review everything before it counts, and student-facing use follows district guidance.</div>
+      </div>
+    </div>
+    <div class="tpane" id="tab-magicschool" role="tabpanel" aria-labelledby="rtab-magicschool" tabindex="0">
+      <div class="panel">
+        <div class="toolhead"><div class="tic brandtic"><img src="logos/magicschool_t.png" alt="MagicSchool"></div>
+          <div><h3>MagicSchool</h3><p class="tsub">80+ single-purpose teacher tools &middot; magicschool.ai &middot; sign in with your district account</p></div></div>
+        <div class="callout"><b>Pick the tool, fill in the blanks, review.</b> MagicSchool is a menu of small tools, one per task, with fields instead of prompts. Less prompting skill needed; exactly the same review rules.</div>
+        <h2 class="h2sec first"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>How It Works</h2>
+        <div class="steps"><div class="step"><span class="sn">1</span><h3>Sign In</h3><p>magicschool.ai with your district account.</p></div><div class="step"><span class="sn">2</span><h3>Search By Task</h3><p>Find the tool that matches the job: leveler, rubric, behavior support, newsletter.</p></div><div class="step"><span class="sn">3</span><h3>Fill In The Fields</h3><p>Grade, topic, and context. The more specific, the better the draft.</p></div><div class="step"><span class="sn">4</span><h3>Generate, Review, Export</h3><p>Edit in place, then copy or export. You review before anything reaches students.</p></div></div>
+        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/></svg></span>Step-By-Step Guides</h2>
+        <div class="acc"><button class="ah" aria-expanded="false"><span>Guide 1 &middot; Find The Right Tool Fast &nbsp;<span class="chip teal">~3 min</span></span><span class="car">&#8250;</span></button><div class="ab"><ol><li><b>Sign in at magicschool.ai</b> with your district account.</li><li><b>Search the tool list</b> by task, not by tool name: "rubric", "behavior", "newsletter", "scaffold".</li><li><b>Pin your favorites.</b> Most teachers settle on five or six tools; pinning saves the hunt.</li><li><b>Fill in the fields and generate.</b> Grade, topic, and context fields replace prompt writing.</li></ol></div></div><div class="acc"><button class="ah" aria-expanded="false"><span>Guide 2 &middot; Use Student-Adjacent Tools Safely &nbsp;<span class="chip teal">~8 min</span></span><span class="car">&#8250;</span></button><div class="ab"><ol><li><b>Describe, never name.</b> "A 4th grader reading two years below level" works as well as a name.</li><li><b>Keep decisions with people.</b> Drafts support team discussions; they never make placement, discipline, or eligibility calls.</li><li><b>Strip details before you paste</b> anything that started as a real student document.</li><li><b>Review line by line</b> before anything goes into a record or reaches a family.</li></ol><div class="callout warn"><b>Watch for:</b> MagicSchool's biggest risk is convenience: it will happily accept student details you should never enter.</div></div></div>
+        <h2 class="h2sec"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></span>Moves Worth Knowing</h2>
+        <div class="grid2c"><div class="mini"><h3>Text Leveler And Scaffolder</h3><p>Re-level a passage or build scaffolds and sentence stems for the text you already teach.</p></div><div class="mini"><h3>Behavior And SEL Supports</h3><p>Draft Tier 1 supports, restorative conversation starters, and routines. Describe situations, never students.</p></div><div class="mini"><h3>Family Communication Drafts</h3><p>Newsletters, updates, and tricky-message drafts in family-friendly language, no names.</p></div><div class="mini"><h3>The Student-Info Caution</h3><p>Its tools invite detail. Never enter student <span class="dfn" tabindex="0" data-tip="Personally identifiable information: anything that could identify a specific student, such as a name, student number, birthdate, photo, or IEP details.">PII</span>; describe the situation generically and keep decisions with your team.</p></div></div>
+        <div class="callout warn" style="margin-top:18px"><b>Same rule as everywhere:</b> no student names or <span class="dfn" tabindex="0" data-tip="Personally identifiable information: anything that could identify a specific student, such as a name, student number, birthdate, photo, or IEP details.">PII</span>, and every draft gets your review before it's used. Convenience is not a guardrail; you are.</div>
       </div>
     </div>
 
@@ -1941,7 +1931,7 @@ section.band{margin-bottom:54px}
         </div>
         <div class="mini goldic">
           <h3>Diffit's PD Kit</h3>
-          <p>An overview video, a ready-to-use PD slide deck, subject-specific how-to guides (including SPED and EL), and a host-your-own training kit they'll send you materials for.</p>
+          <p>An overview video, a ready-to-use PD slide deck, subject- and program-specific how-to guides, and a host-your-own training kit they'll send you materials for.</p>
           <p style="margin-top:10px"><a class="cta sm soft" href="https://web.diffit.me/professional-development" target="_blank" rel="noopener">Get the PD kit</a></p>
         </div>
         <div class="mini goldic">
@@ -2249,7 +2239,7 @@ function showTab(name,focus){
   $$('.tpane').forEach(p=>p.classList.toggle('show', p.id==='tab-'+name));
 }
 (function(){
-  const order=['copilot','diffit'];
+  const order=['copilot','diffit','khanmigo','magicschool'];
   $$('.tab').forEach(t=>t.addEventListener('keydown',e=>{
     const i=order.indexOf(t.dataset.tab); let n=-1;
     if(e.key==='ArrowRight'||e.key==='ArrowDown') n=(i+1)%order.length;
