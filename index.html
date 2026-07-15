@@ -1015,6 +1015,22 @@ section.band{margin-bottom:54px}
 .gsearchwrap svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--wcsd-text-muted);pointer-events:none}
 #glossSearch{width:100%;font-family:inherit;font-size:14.5px;color:var(--wcsd-navy-900);padding:11px 14px 11px 38px;border:1.5px solid var(--wcsd-border-strong);border-radius:11px;background:#fff}
 #glossSearch:focus{outline:none;border-color:var(--wcsd-navy-700);box-shadow:0 0 0 3px rgba(1,82,138,.15)}
+
+/* ============ site-wide nav search ============ */
+.navsearch{position:relative;margin-left:auto;flex-shrink:0}
+.navsearch svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--wcsd-text-muted);pointer-events:none}
+#siteSearch{font-family:inherit;font-size:13px;color:var(--wcsd-navy-900);width:170px;padding:8px 10px 8px 31px;
+  border:1.5px solid var(--wcsd-border);border-radius:999px;background:var(--wcsd-surface-2);transition:width .15s ease,border-color .15s ease,background .15s ease}
+#siteSearch:focus{outline:none;width:250px;border-color:var(--wcsd-navy-700);background:#fff;box-shadow:0 0 0 3px rgba(1,82,138,.14)}
+#siteResults{position:absolute;right:0;top:calc(100% + 8px);width:min(430px,90vw);max-height:60vh;overflow:auto;background:#fff;
+  border:1px solid var(--wcsd-border-strong);border-radius:13px;box-shadow:0 14px 38px rgba(11,36,64,.22);padding:6px;z-index:400}
+#siteResults .sr{display:block;width:100%;text-align:left;font-family:inherit;background:#fff;border:none;border-radius:9px;padding:9px 11px;cursor:pointer}
+#siteResults .sr:hover,#siteResults .sr:focus-visible{background:var(--wcsd-navy-50);outline:none}
+#siteResults .sr b{display:block;font-size:13px;color:var(--wcsd-navy-900);font-weight:700;line-height:1.35}
+#siteResults .sr span{display:flex;gap:7px;align-items:center;font-size:11px;color:var(--wcsd-text-muted);margin-top:2px}
+#siteResults .sr .pg{flex-shrink:0;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--wcsd-navy-700);background:var(--wcsd-navy-50);border-radius:5px;padding:2px 6px}
+#siteResults .none{font-size:12.5px;color:var(--wcsd-text-muted);padding:11px 12px}
+@media(max-width:880px){.navsearch{width:100%;margin-left:0}#siteSearch,#siteSearch:focus{width:100%}}
 </style>
 </head>
 
@@ -1034,6 +1050,11 @@ section.band{margin-bottom:54px}
     <a href="#tools" data-nav="tools">AI Tools &amp; Guides</a>
     <a href="#pd" data-nav="pd">Professional Learning</a>
     <a href="#faq" data-nav="faq">FAQ &amp; Glossary</a>
+  </div>
+  <div class="navsearch">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="siteSearch" type="search" placeholder="Search the Hub" aria-label="Search the whole Hub" autocomplete="off">
+    <div id="siteResults" role="listbox" aria-label="Search results" hidden></div>
   </div>
 </nav>
 
@@ -2674,6 +2695,87 @@ document.querySelectorAll('.ucx').forEach(function(wrap){
       c.style.display=hit?'':'none'; if(hit)shown++;
     });
     if(empty) empty.style.display=shown?'none':'block';
+  });
+})();
+
+/* ================= SITE-WIDE SEARCH ================= */
+(function(){
+  var inp=document.getElementById('siteSearch'), box=document.getElementById('siteResults');
+  if(!inp||!box) return;
+  var PAGES={home:'Home',teach:'TEACH',prompting:'Prompting',library:'AI Uses',tools:'Tools',pd:'PD',faq:'FAQ'};
+  var index=[];
+  function label(el){
+    var t=(el.textContent||'').replace(/\s+/g,' ').trim();
+    return t.slice(0,90)+(t.length>90?'\u2026':'');
+  }
+  function build(){
+    index=[];
+    document.querySelectorAll('.screen').forEach(function(scr){
+      var pg=scr.id;
+      scr.querySelectorAll('h2, h3, .gterm, .acc .ah > span, .ucprompt, .rung b, .light b, .mini p, .gterm p').forEach(function(el){
+        var host=el.closest('.gterm')||el.closest('.acc')||el;
+        index.push({pg:pg, el:host, text:(host.textContent||'').toLowerCase(), title:label(el.closest('.gterm')?el.closest('.gterm').querySelector('b'):el)});
+      });
+    });
+  }
+  function reveal(el){
+    var tp=el.closest('.tpane');
+    if(tp && typeof showTab==='function') showTab(tp.id.replace('tab-',''));
+    var cat=el.closest('.panel.ucat');
+    if(cat && typeof selectCat==='function') selectCat(cat.id);
+    var pane=el.closest('.ucx-pane');
+    if(pane){var btn=document.getElementById(pane.id.replace('uc-','ucbtn-')); if(btn) btn.click();}
+    var acc=el.closest('.acc');
+    if(acc && !acc.classList.contains('open')){var ah=acc.querySelector('.ah'); if(ah) ah.click();}
+  }
+  function go(item){
+    box.hidden=true; inp.blur();
+    if(location.hash!=='#'+item.pg) location.hash=item.pg;
+    setTimeout(function(){
+      reveal(item.el);
+      setTimeout(function(){
+        try{item.el.scrollIntoView({behavior:'smooth',block:'center'});}catch(e){}
+        var prev=item.el.style.backgroundColor;
+        item.el.style.transition='background-color .4s ease';
+        item.el.style.backgroundColor='#FBF0C4';
+        setTimeout(function(){item.el.style.backgroundColor=prev;},1600);
+      },140);
+    },80);
+  }
+  function render(q){
+    if(!index.length) build();
+    var ql=q.toLowerCase(), hits=[], seen=[];
+    for(var i=0;i<index.length && hits.length<12;i++){
+      var it=index[i];
+      if(it.text.indexOf(ql)>-1 && seen.indexOf(it.el)===-1){hits.push(it);seen.push(it.el);}
+    }
+    box.innerHTML='';
+    if(!hits.length){box.innerHTML='<div class="none">No matches. Try another word, or send it to ai@washoeschools.net.</div>';}
+    hits.forEach(function(it){
+      var b=document.createElement('button');
+      b.className='sr'; b.type='button'; b.setAttribute('role','option');
+      b.innerHTML='<b></b><span><span class="pg"></span><span class="ctxt"></span></span>';
+      b.querySelector('b').textContent=it.title;
+      b.querySelector('.pg').textContent=PAGES[it.pg]||it.pg;
+      var t=(it.el.textContent||'').replace(/\s+/g,' ').trim();
+      var at=t.toLowerCase().indexOf(ql);
+      b.querySelector('.ctxt').textContent=(at>40?'\u2026':'')+t.slice(Math.max(0,at-40),at+60)+'\u2026';
+      b.addEventListener('click',function(){go(it);});
+      box.appendChild(b);
+    });
+    box.hidden=false;
+  }
+  inp.addEventListener('input',function(){
+    var q=inp.value.trim();
+    if(q.length<2){box.hidden=true;return;}
+    render(q);
+  });
+  inp.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){var first=box.querySelector('.sr'); if(first){e.preventDefault();first.click();}}
+    if(e.key==='Escape'){box.hidden=true;inp.blur();}
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest||!e.target.closest('.navsearch')) box.hidden=true;
   });
 })();
 
