@@ -2200,7 +2200,7 @@ section.band{margin-bottom:54px}
           <textarea class="cfi" id="cfMsg" name="comment" rows="6" required placeholder="What are you wondering, or what should we add?"></textarea>
           <input id="cfWeb" name="website" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:1px;width:1px" aria-hidden="true">
           <p class="cferr" id="cfErr" hidden>Please fill in all three fields (and check the email address).</p>
-          <button class="cta navy" type="submit" style="margin-top:6px">Send To The AI Team</button>
+          <button class="cta navy" type="submit" style="margin-top:6px">Send</button>
           <p class="cfok" id="cfOk" hidden></p>
         </form>
       </div>
@@ -2845,7 +2845,7 @@ document.querySelectorAll('.ucx').forEach(function(wrap){
     err.hidden=valid; if(!valid){ok.hidden=true;return;}
     btn.disabled=true; btn.textContent='Sending\u2026';
     function done(sent){
-      btn.disabled=false; btn.textContent='Send To The AI Team';
+      btn.disabled=false; btn.textContent='Send';
       if(sent){
         ok.textContent='Sent. Your note is in the AI team\'s inbox, and we will reply to your district email.';
         ok.hidden=false; f.reset();
