@@ -67,16 +67,16 @@ button{font-family:inherit}
   background-size:100% 100%}
 .hero::before{content:"";position:absolute;top:-60px;right:-42px;width:300px;height:300px;
   background:radial-gradient(circle,rgba(27,111,168,.15) 0%,rgba(46,196,182,.07) 45%,transparent 68%);
-  pointer-events:none;animation:blobDrift 13s ease-in-out infinite alternate}
+  pointer-events:none;}
 .hero::after{content:"";position:absolute;bottom:-72px;left:-52px;width:300px;height:300px;
   background:radial-gradient(circle,rgba(222,180,10,.18) 0%,rgba(239,205,77,.08) 50%,transparent 72%);
-  pointer-events:none;animation:blobDrift 17s ease-in-out infinite alternate-reverse}
-@keyframes blobDrift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-16px,14px) scale(1.07)}}
+  pointer-events:none;}
+
 .hero-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;
   display:flex;align-items:flex-start;gap:24px}
 .hero-inner::after{content:"";position:absolute;top:-30px;left:44%;width:220px;height:220px;z-index:-1;
   background:radial-gradient(circle,rgba(46,196,182,.15) 0%,transparent 65%);
-  pointer-events:none;animation:blobDrift 15s ease-in-out infinite alternate}
+  pointer-events:none;}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--wcsd-navy-500);
   text-transform:uppercase;margin:0 0 10px;display:inline-flex;align-items:center;gap:8px}
 .eyebrow::before{content:"";display:inline-block;width:24px;height:3px;
@@ -955,6 +955,15 @@ section.band{margin-bottom:54px}
 /* legend: centered row */
 .pbuilder .pleg{justify-content:center}
 .pbuilder .pleg .pk2{text-align:center}
+
+/* TEACH acronym: always color-coded */
+.tclr i{font-style:normal;font-weight:800}
+.tclr i:nth-of-type(1){color:#01528A}
+.tclr i:nth-of-type(2){color:#0E8C7F}
+.tclr i:nth-of-type(3){color:#B8940A}
+.tclr i:nth-of-type(4){color:#B42318}
+.tclr i:nth-of-type(5){color:#6A3FB5}
+.navlinks a.active .tclr i{color:#fff}
 </style>
 </head>
 
@@ -968,7 +977,7 @@ section.band{margin-bottom:54px}
   </a>
   <div class="navlinks" role="navigation" aria-label="Sections">
     <a href="#home" data-nav="home" class="active">Home</a>
-    <a href="#teach" data-nav="teach">TEACH Framework</a>
+    <a href="#teach" data-nav="teach"><span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> Framework</a>
     <a href="#prompting" data-nav="prompting">Prompting AI</a>
     <a href="#library" data-nav="library">AI Uses</a>
     <a href="#tools" data-nav="tools">AI Tools &amp; Guides</a>
@@ -991,7 +1000,7 @@ section.band{margin-bottom:54px}
     </div>
   </div>
 
-  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
+  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical Use</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
   <div class="container spad">
     <section class="band open" aria-label="Guardrails and approved AI tools">
       <div class="gr-head">
@@ -1000,32 +1009,32 @@ section.band{margin-bottom:54px}
       </div>
       <div class="grid3 guards">
         <div class="gcard g1"><span class="gnum" aria-hidden="true">1</span><h3>Always Protect Student and Staff Confidentiality</h3><p>Staff are prohibited from entering personally identifiable information into public AI tools, to safeguard privacy and remain compliant with <a class="dfn" href="https://studentprivacy.ed.gov/ferpa" target="_blank" rel="noopener" data-tip="The Family Educational Rights and Privacy Act: the federal law that protects student education records and personally identifiable information.">FERPA</a>.</p><div class="xlinks"><a class="xlink" href="#teach" data-anchor="t-c">See safe and ethical use &rarr;</a></div></div>
-        <div class="gcard g2"><span class="gnum" aria-hidden="true">2</span><h3>Use AI Purposefully and Transparently</h3><p>AI use should align with <a class="mission-link" href="https://www.washoeschools.net/strategicplan" target="_blank" rel="noopener">the district's mission</a> and professional standards. Staff and students acknowledge when AI contributes to their work.</p><div class="xlinks"><a class="xlink" href="#teach">Explore the TEACH framework &rarr;</a></div></div>
+        <div class="gcard g2"><span class="gnum" aria-hidden="true">2</span><h3>Use AI Purposefully and Transparently</h3><p>AI use should align with <a class="mission-link" href="https://www.washoeschools.net/strategicplan" target="_blank" rel="noopener">the district's mission</a> and professional standards. Staff and students acknowledge when AI contributes to their work.</p><div class="xlinks"><a class="xlink" href="#teach">Explore the <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework &rarr;</a></div></div>
         <div class="gcard g3"><span class="gnum" aria-hidden="true">3</span><h3>Always Keep a Human in the Loop</h3><p>All AI-generated content must be reviewed, verified, and approved by a human expert. Human judgment and professional standards are always maintained.</p><div class="xlinks"><a class="xlink" href="#teach" data-anchor="g-scale">See the Human Agency Scale &rarr;</a></div></div>
       </div>
       <div class="gr-head gr-head-sub"><h2>District-Approved AI Tools</h2></div>
       <div class="toolstrip center">
         <span class="tchip"><img class="tlogo" src="logos/copilot_t.png" alt="Microsoft Copilot" loading="lazy"> <a href="https://copilot.microsoft.com" target="_blank" rel="noopener">Open &#8599;</a></span>
         <span class="tchip"><img class="tlogo" src="logos/diffit_t.png" alt="Diffit" loading="lazy"> <a href="https://web.diffit.me" target="_blank" rel="noopener">Open &#8599;</a></span>
-        <span class="tchip"><img class="tlogo" src="logos/khanmigo_t.png" alt="Khanmigo" loading="lazy"> <a href="https://www.khanmigo.ai" target="_blank" rel="noopener">Open &#8599;</a></span>
+        <span class="tchip"><img class="tlogo" src="logos/khanmigo_t.png" alt="Khanmigo" loading="lazy"> <a href="https://clever.com/in/washoe" target="_blank" rel="noopener">Open &#8599;</a></span>
         <span class="tchip"><img class="tlogo" src="logos/magicschool_t.png" alt="MagicSchool" loading="lazy"> <a href="https://www.magicschool.ai" target="_blank" rel="noopener">Open &#8599;</a></span>
       </div>
     </section>
 
     <section class="band panel tint-blue no-acc" aria-label="The TEACH framework" style="padding:40px 26px">
-      <div class="secthead"><div><h2 style="font-size:25px">One simple framework: TEACH</h2><div class="ssm">Five commitments, built by WCSD teachers, that keep AI safe and useful. It is how we make sure AI enhances your teaching and never replaces your judgment.</div></div></div>
+      <div class="secthead"><div><h2 style="font-size:25px">One Simple Framework: <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span></h2><div class="ssm">Five commitments, built by WCSD teachers, that keep AI safe and useful. It is how we make sure AI enhances your teaching and never replaces your judgment.</div></div></div>
       <div class="teachrow">
         <a class="tl t1" href="#teach"><span class="L">T</span><span class="w">Thoroughly Evaluate</span></a>
         <a class="tl t2" href="#teach"><span class="L">E</span><span class="w">Engage with Curriculum</span></a>
         <a class="tl t3" href="#teach"><span class="L">A</span><span class="w">Adhere to Approved Tools</span></a>
-        <a class="tl t4" href="#teach"><span class="L">C</span><span class="w">Commit to Safe &amp; Ethical</span></a>
+        <a class="tl t4" href="#teach"><span class="L">C</span><span class="w">Commit to Safe &amp; Ethical Use</span></a>
         <a class="tl t5" href="#teach"><span class="L">H</span><span class="w">Harness the Potential</span></a>
       </div>
-      <p style="margin:16px 0 0;display:flex;gap:10px;flex-wrap:wrap"><a class="cta soft sm" href="#teach">Explore the TEACH framework &rarr;</a><a class="cta soft sm" href="WCSD-TEACH-One-Pager.pdf" download>Download TEACH Quick Reference</a></p>
+      <p style="margin:16px 0 0;display:flex;gap:10px;flex-wrap:wrap"><a class="cta soft sm" href="#teach">Explore the <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework &rarr;</a><a class="cta soft sm" href="WCSD-TEACH-One-Pager.pdf" download>Download <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> Quick Reference</a></p>
     </section>
 
     <section class="band open" aria-label="Write a prompt that works">
-      <div class="secthead centered"><div><h2 style="font-size:25px">Write a prompt that works</h2><div class="ssm">A prompt is just a sentence: Who, Why, What, And, How. Read them in order.</div></div></div>
+      <div class="secthead centered"><div><h2 style="font-size:25px">Write A Prompt That Works</h2><div class="ssm">A prompt is just a sentence: Who, Why, What, And, How. Read them in order.</div></div></div>
       <div class="pbuilder lite">
         <div class="pk">A strong prompt, color-coded</div>
         <div class="psent">As a <span class="pseg p1">6th grade science teacher in WCSD</span>, <span class="pseg p2">for my mixed-readiness class with limited devices</span>, <span class="pseg p3">create student directions and a rubric</span>, <span class="pseg p4">aligned to <span class="dfn" tabindex="0" data-tip="Next Generation Science Standards: the science standards Nevada's academic content standards are built on.">NGSS</span> MS-ESS3-2 across three 60-minute periods on one hazard</span>, <span class="pseg p5">so students build a model of how weather and climate create natural hazards</span>.</div>
@@ -1042,7 +1051,7 @@ section.band{margin-bottom:54px}
     </section>
 
     <section class="band open" id="moments" aria-label="AI ideas by area">
-      <div class="secthead centered"><div><h2 style="font-size:25px">AI ideas for every part of your week</h2><div class="ssm">Real classroom examples across instructional planning, instruction, student supports, assessment and reflection, and communication. Pick an area, see how AI helps, then grab a ready prompt.</div></div></div>
+      <div class="secthead centered"><div><h2 style="font-size:25px">AI Ideas For Every Part Of Your Week</h2><div class="ssm">Real classroom examples across instructional planning, instruction, student supports, assessment and reflection, and communication. Pick an area, see how AI helps, then grab a ready prompt.</div></div></div>
       <div class="momentx">
         <div class="mxnav" role="tablist" aria-label="Choose an area">
           <button class="mxbtn active" role="tab" aria-selected="true" aria-controls="mx-planning" id="mxt-planning" data-mx="planning">Planning</button>
@@ -1102,7 +1111,7 @@ section.band{margin-bottom:54px}
     </section>
 
     <section class="band open" aria-label="Frequently asked questions">
-      <div class="secthead centered"><div><h2 style="font-size:25px">Real questions, straight answers</h2><div class="ssm">The things teachers actually ask. More on the TEACH framework page.</div></div></div>
+      <div class="secthead centered"><div><h2 style="font-size:25px">Real Questions, Straight Answers</h2><div class="ssm">The things teachers actually ask. More on the <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework page.</div></div></div>
       <div id="faqWrap">
         <div class="acc">
           <button class="ah" aria-expanded="false"><span>Is using AI for my planning cheating?</span><span class="car">&#8250;</span></button>
@@ -1122,7 +1131,7 @@ section.band{margin-bottom:54px}
         </div>
       <div class="acc">
         <button class="ah" aria-expanded="false"><span>How do we talk with families about AI?</span><span class="car">&#8250;</span></button>
-        <div class="ab">Openly and simply. AI helps teachers with drafts, planning, and translation, and a human reviews everything before it reaches students or families. Student information never goes into AI tools. If a family wants to know more, the TEACH Framework page is written plainly enough to share.</div>
+        <div class="ab">Openly and simply. AI helps teachers with drafts, planning, and translation, and a human reviews everything before it reaches students or families. Student information never goes into AI tools. If a family wants to know more, the <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> Framework page is written plainly enough to share.</div>
       </div>
       </div>
     </section>
@@ -1135,14 +1144,14 @@ section.band{margin-bottom:54px}
     <div class="hero-inner">
       <div>
         <p class="eyebrow">AI Adoption</p>
-        <h1>The TEACH <span class="name">Framework</span></h1>
+        <h1>The <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> <span class="name">Framework</span></h1>
         <p class="ctx">How WCSD uses AI to enhance, not replace, intentional lesson design and district resources. Five commitments, built by WCSD teachers.</p>
       </div>
       <img class="hero-logo" src="logos/wcsd-logo-horizontal.png" alt="Washoe County School District logo">
     </div>
   </div>
 
-  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
+  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical Use</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
   <div class="container" style="padding-bottom:0">
     <div class="wordmark" style="margin:22px 0 0">
       <a href="#t-t" class="wm-t"><span class="L">T</span><span class="w">Thoroughly Evaluate</span></a>
@@ -1189,6 +1198,7 @@ section.band{margin-bottom:54px}
         <div class="xlinks">
           <a class="xlink" href="#library">Browse AI ideas &rarr;</a>
           <a class="xlink" href="#prompting">How to write a strong prompt &rarr;</a>
+          <a class="xlink ext" href="https://www.washoeschools.net/directory/curriculum-and-instruction" target="_blank" rel="noopener">District curriculum, standards &amp; assessment &#8599;</a>
         </div>
       </div>
     </div>
@@ -1214,8 +1224,8 @@ section.band{margin-bottom:54px}
         </div>
         <div class="toolrow">
           <div class="tklogo"><img src="logos/khanmigo_t.png" alt="Khanmigo" loading="lazy"></div>
-          <div><div class="tn">Khanmigo</div><div class="td">Khan Academy's AI tutor and teaching assistant.</div></div>
-          <div class="tgo"><a class="xlink ext" href="https://www.khanmigo.ai" target="_blank" rel="noopener">Open Khanmigo &#8599;</a></div>
+          <div><div class="tn">Khanmigo</div><div class="td">Khan Academy's AI tutor and teaching assistant. Log in through Clever, and WCSD access is free.</div></div>
+          <div class="tgo"><a class="xlink ext" href="https://clever.com/in/washoe" target="_blank" rel="noopener">Open via Clever &#8599;</a></div>
         </div>
         <div class="toolrow">
           <div class="tklogo"><img src="logos/magicschool_t.png" alt="MagicSchool" loading="lazy"></div>
@@ -1288,7 +1298,7 @@ section.band{margin-bottom:54px}
     </div>
 
     <div id="g-chart" style="margin-bottom:24px">
-      <div class="secthead centered" style="margin-bottom:16px"><div><h2 style="font-size:25px">The do/don't chart</h2><div class="ssm" style="font-size:15px">Green, yellow, red: what Tuesday morning actually looks like, with a clear go, slow, or stop for everyday tasks.</div></div></div>
+      <div class="secthead centered" style="margin-bottom:16px"><div><h2 style="font-size:25px">The Do/Don't Chart</h2><div class="ssm" style="font-size:15px">Green, yellow, red: what Tuesday morning actually looks like, with a clear go, slow, or stop for everyday tasks.</div></div></div>
       <div class="lights">
         <div class="light green">
           <div class="lh"><span class="ldot"></span>Green · Go</div>
@@ -1300,7 +1310,7 @@ section.band{margin-bottom:54px}
             <li>Build sub plans, agendas, and duty schedules</li>
             <li>Summarize public articles and research</li>
           </ul>
-          <p class="lsub">Standard habits apply: review everything before it reaches students or families.</p>
+          <p class="lsub">Green means: standard habits still apply, and you review everything before it reaches students or families.</p>
         </div>
         <div class="light yellow">
           <div class="lh"><span class="ldot"></span>Yellow · Go carefully</div>
@@ -1342,12 +1352,12 @@ section.band{margin-bottom:54px}
       <img class="hero-logo" src="logos/wcsd-logo-horizontal.png" alt="Washoe County School District logo">
     </div>
   </div>
-  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
+  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical Use</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
   <div class="container spad">
     <div class="panel">
-      <div class="gr-head" style="max-width:940px"><h2>Writing prompts</h2><p>A prompt is just a sentence. Tell AI exactly what you need, in order: Who, Why, What, And, How.</p></div>
+      <div class="gr-head" style="max-width:940px"><h2>Writing Prompts</h2><p>A prompt is just a sentence. Tell AI exactly what you need, in order: Who, Why, What, And, How.</p></div>
 
-      <h3 class="pb-sub" style="font-size:18px">The five parts</h3>
+      <h3 class="pb-sub" style="font-size:18px">The Five Parts</h3>
       <div class="pkey">
         <div class="pkc p1"><div class="pkh">Who<span class="pkt">the role</span></div><p>Your role, subject, and grade.<span class="pex">A 6th grade science teacher in WCSD.</span></p></div>
         <div class="pkc p2"><div class="pkh">Why<span class="pkt">the context</span></div><p>The background and purpose that shape the whole task.<span class="pex">My students, materials, and tech.</span></p></div>
@@ -1454,7 +1464,7 @@ section.band{margin-bottom:54px}
       </div>
     </div>
 
-    <div class="gr-head" style="margin-top:30px;max-width:940px"><h2>Why we prompt</h2><p>Prompting well is a teaching move, not a tech trick. A clear prompt the first time saves the back-and-forth, and it keeps you in charge of the thinking. Here is what a strong prompt buys back.</p></div>
+    <div class="gr-head" style="margin-top:30px;max-width:940px"><h2>Why We Prompt</h2><p>Prompting well is a teaching move, not a tech trick. A clear prompt the first time saves the back-and-forth, and it keeps you in charge of the thinking. Here is what a strong prompt buys back.</p></div>
       <div class="whyx">
         <div class="wx wx-navy">
           <div class="wx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z"/></svg></div>
@@ -1473,10 +1483,10 @@ section.band{margin-bottom:54px}
         </div>
       </div>
       <div class="callout" style="margin-top:14px">
-        <b>The point:</b> a prompt is designed to support an instructional goal, not just to generate content. That's the "E" in <a href="#teach" style="color:var(--wcsd-navy-700);font-weight:600">TEACH</a>: engage with curriculum.
+        <b>The point:</b> a prompt is designed to support an instructional goal, not just to generate content. That's the "E" in <a href="#teach" style="color:var(--wcsd-navy-700);font-weight:600"><span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span></a>: engage with curriculum.
       </div>
 
-      <div class="gr-head" style="margin-top:34px"><h2>Habits worth building</h2><p class="habithead-note">Every habit ties straight back to our three core guardrails: protect confidentiality, use AI purposefully and transparently, and keep a human in the loop.</p></div>
+      <div class="gr-head" style="margin-top:34px"><h2>Habits Worth Building</h2><p class="habithead-note">Every habit ties straight back to our three core guardrails: protect confidentiality, use AI purposefully and transparently, and keep a human in the loop.</p></div>
       <div class="habits">
         <div class="habit"><div class="hico" aria-hidden="true" style="background:linear-gradient(135deg,#1B6FA8,#01528A)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg></div><div class="hbc"><h3>Talk to it like a student teacher</h3><p>Smart, eager, and brand new to your classroom. It needs your context: grade, students, constraints, and what good looks like. The more it knows, the better it helps.</p></div></div>
         <div class="habit"><div class="hico" aria-hidden="true" style="background:linear-gradient(135deg,#EFCD4D,#B8940A)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M8.5 11h5"/><path d="M11 8.5v5"/></svg></div><div class="hbc"><h3>Never trust a number you didn't check</h3><p>Math, dates, stats, and citations are where AI is most confidently wrong. If a number is going in front of students, families, or your principal, verify it first.</p></div></div>
@@ -1500,7 +1510,7 @@ section.band{margin-bottom:54px}
       <img class="hero-logo" src="logos/wcsd-logo-horizontal.png" alt="Washoe County School District logo">
     </div>
   </div>
-  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
+  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical Use</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
   <div class="container spad">
     <div class="folder">
       <div class="ftabs" role="tablist" aria-label="AI use areas"><button class="ftab active" role="tab" id="ft-planning" aria-controls="cat-planning" aria-selected="true" tabindex="0" data-cat="cat-planning">Instructional Planning</button><button class="ftab" role="tab" id="ft-instruction" aria-controls="cat-instruction" aria-selected="false" tabindex="-1" data-cat="cat-instruction">Instruction</button><button class="ftab" role="tab" id="ft-differentiation" aria-controls="cat-differentiation" aria-selected="false" tabindex="-1" data-cat="cat-differentiation">Student Supports</button><button class="ftab" role="tab" id="ft-assessment" aria-controls="cat-assessment" aria-selected="false" tabindex="-1" data-cat="cat-assessment">Assessment &amp; Reflection</button><button class="ftab" role="tab" id="ft-communication" aria-controls="cat-communication" aria-selected="false" tabindex="-1" data-cat="cat-communication">Communication</button></div>
@@ -1513,7 +1523,7 @@ section.band{margin-bottom:54px}
           <button class="ucx-btn" role="tab" id="ucbtn-pl-4" aria-controls="uc-pl-4" aria-selected="false" tabindex="-1" data-uc="pl-4">Plan a sub day or specials</button>
           <button class="ucx-btn" role="tab" id="ucbtn-pl-5" aria-controls="uc-pl-5" aria-selected="false" tabindex="-1" data-uc="pl-5">Pace, group, and scaffold</button>
           </div>
-        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach">TEACH framework</a>: you evaluate every draft</li><li>Starting from the exact standard, not a paraphrase</li><li>Grounding prompts in our district-adopted curriculum</li><li>Uploading supporting docs (units, pacing guides) to assist</li></ul></div>
+        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach"><span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework</a>: you evaluate every draft</li><li>Starting from the exact standard, not a paraphrase</li><li>Grounding prompts in our district-adopted curriculum</li><li>Uploading supporting docs (units, pacing guides) to assist</li></ul></div>
         </div>
         <div class="ucx-out">
         <div class="ucx-pane show" id="uc-pl-1" role="tabpanel" aria-labelledby="ucbtn-pl-1" tabindex="0">
@@ -1552,7 +1562,7 @@ section.band{margin-bottom:54px}
           <button class="ucx-btn" role="tab" id="ucbtn-in-4" aria-controls="uc-in-4" aria-selected="false" tabindex="-1" data-uc="in-4">Design a PBL or hands-on task</button>
           <button class="ucx-btn" role="tab" id="ucbtn-in-5" aria-controls="uc-in-5" aria-selected="false" tabindex="-1" data-uc="in-5">Support SEL and behavior</button>
           </div>
-        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach">TEACH framework</a>: AI enhances, never replaces</li><li>Focusing on enhancing <span class="dfn" tabindex="0" data-tip="In a multi-tiered system of supports (MTSS), Tier 1 is the universal instruction and expectations every student receives. Tiers 2 and 3 add targeted and intensive support.">Tier 1</span> instruction for all students</li><li>Naming the <span class="dfn" tabindex="0" data-tip="Depth of Knowledge: a four-level scale for how deeply students must think. DOK 1 is recall, DOK 2 is applying skills, DOK 3 is strategic reasoning, DOK 4 is extended thinking.">DOK</span> level you want</li><li>Uploading the exact resource or excerpt you teach</li></ul></div>
+        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach"><span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework</a>: AI enhances, never replaces</li><li>Focusing on enhancing <span class="dfn" tabindex="0" data-tip="In a multi-tiered system of supports (MTSS), Tier 1 is the universal instruction and expectations every student receives. Tiers 2 and 3 add targeted and intensive support.">Tier 1</span> instruction for all students</li><li>Naming the <span class="dfn" tabindex="0" data-tip="Depth of Knowledge: a four-level scale for how deeply students must think. DOK 1 is recall, DOK 2 is applying skills, DOK 3 is strategic reasoning, DOK 4 is extended thinking.">DOK</span> level you want</li><li>Uploading the exact resource or excerpt you teach</li></ul></div>
         </div>
         <div class="ucx-out">
         <div class="ucx-pane show" id="uc-in-1" role="tabpanel" aria-labelledby="ucbtn-in-1" tabindex="0">
@@ -1591,7 +1601,7 @@ section.band{margin-bottom:54px}
           <button class="ucx-btn" role="tab" id="ucbtn-df-5" aria-controls="uc-df-5" aria-selected="false" tabindex="-1" data-uc="df-5">Build a graphic organizer</button>
           <button class="ucx-btn" role="tab" id="ucbtn-df-6" aria-controls="uc-df-6" aria-selected="false" tabindex="-1" data-uc="df-6">Plan for co-teaching</button>
           </div>
-        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach">TEACH framework</a>: supports stay teacher-led</li><li>Scaffolding up to grade level, never lowering it</li><li>Naming strategies: GLAD, ELLevation, Kagan, UDL</li><li>Describing student needs without ever identifying students</li></ul></div>
+        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach"><span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework</a>: supports stay teacher-led</li><li>Scaffolding up to grade level, never lowering it</li><li>Naming strategies: GLAD, ELLevation, Kagan, UDL</li><li>Describing student needs without ever identifying students</li></ul></div>
         </div>
         <div class="ucx-out">
         <div class="ucx-pane show" id="uc-df-1" role="tabpanel" aria-labelledby="ucbtn-df-1" tabindex="0">
@@ -1633,7 +1643,7 @@ section.band{margin-bottom:54px}
           <button class="ucx-btn" role="tab" id="ucbtn-as-3" aria-controls="uc-as-3" aria-selected="false" tabindex="-1" data-uc="as-3">Assess throughout instruction</button>
           <button class="ucx-btn" role="tab" id="ucbtn-as-4" aria-controls="uc-as-4" aria-selected="false" tabindex="-1" data-uc="as-4">Write a formative check</button>
           </div>
-        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach">TEACH framework</a>: verify before it counts</li><li>Considering the exact standards you taught</li><li>Supplementing, never replacing, WCSD assessments</li><li>Using results the same day to adjust instruction</li></ul></div>
+        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach"><span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework</a>: verify before it counts</li><li>Considering the exact standards you taught</li><li>Supplementing, never replacing, WCSD assessments</li><li>Using results the same day to adjust instruction</li></ul></div>
         </div>
         <div class="ucx-out">
         <div class="ucx-pane show" id="uc-as-1" role="tabpanel" aria-labelledby="ucbtn-as-1" tabindex="0">
@@ -1665,7 +1675,7 @@ section.band{margin-bottom:54px}
           <button class="ucx-btn" role="tab" id="ucbtn-cm-2" aria-controls="uc-cm-2" aria-selected="false" tabindex="-1" data-uc="cm-2">Colleagues</button>
           <button class="ucx-btn" role="tab" id="ucbtn-cm-3" aria-controls="uc-cm-3" aria-selected="false" tabindex="-1" data-uc="cm-3">Students</button>
           </div>
-        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach">TEACH framework</a>: you review before it sends</li><li>Keeping every message free of student names and <span class="dfn" tabindex="0" data-tip="Personally identifiable information: anything that could identify a specific student, such as a name, student number, birthdate, photo, or IEP details.">PII</span></li><li>Using family-friendly language, with a fluent speaker checking translations</li><li>Uploading or pasting the source doc for better drafts</li></ul></div>
+        <div class="ucx-consider"><div class="ck">Considerations</div><ul><li>Adhering to the <a href="#teach"><span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework</a>: you review before it sends</li><li>Keeping every message free of student names and <span class="dfn" tabindex="0" data-tip="Personally identifiable information: anything that could identify a specific student, such as a name, student number, birthdate, photo, or IEP details.">PII</span></li><li>Using family-friendly language, with a fluent speaker checking translations</li><li>Uploading or pasting the source doc for better drafts</li></ul></div>
         </div>
         <div class="ucx-out">
         <div class="ucx-pane show" id="uc-cm-1" role="tabpanel" aria-labelledby="ucbtn-cm-1" tabindex="0">
@@ -1704,7 +1714,7 @@ section.band{margin-bottom:54px}
       <img class="hero-logo" src="logos/wcsd-logo-horizontal.png" alt="Washoe County School District logo">
     </div>
   </div>
-  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
+  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical Use</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
   <div class="container spad">
     <div class="tabs" role="tablist" aria-label="Tool guides">
       <button class="tab active" role="tab" id="rtab-copilot" aria-controls="tab-copilot" aria-selected="true" data-tab="copilot">Copilot</button>
@@ -1723,13 +1733,13 @@ section.band{margin-bottom:54px}
         <div class="callout">
           <b>Why signing in matters:</b> with your @washoeschools.net account, Copilot runs with enterprise data protection. Your prompts and responses are never used to train AI models, your chats are encrypted, and your work stays inside the WCSD environment. Look for the green shield once you're signed in. Without it, you're using a public tool and the guardrails change.
         </div>
-        <h2 class="h2sec first"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>What it does for your week</h2>
+        <h2 class="h2sec first"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>What It Does For Your Week</h2>
         <div class="grid3">
           <div class="mini"><h3>Planning and drafting</h3><p>Lesson ideas, leveled passages, rubrics, sub plans, newsletters, agendas. Anything that starts as a blank page.</p></div>
           <div class="mini"><h3>The Teach module</h3><p>Inside the Microsoft 365 Copilot app: standards-aligned lesson plans, quizzes that export straight to Forms, rubrics, flashcards, and reading-level adaptation.</p></div>
           <div class="mini"><h3>Thinking out loud</h3><p>Paste your draft and ask what's unclear. Ask it to argue the other side. Ask what a parent might misread. It's a tireless thought partner.</p></div>
         </div>
-        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/></svg></span>Step-by-step: do real work with Teach</h2>
+        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/></svg></span>Step-By-Step: Do Real Work With Teach</h2>
         <p class="lede" style="margin-top:-2px">Teach is Copilot's guided workspace for teachers, free with your district account (no paid Copilot license needed). Open it at <a href="https://m365.cloud.microsoft/teach" target="_blank" rel="noopener" style="color:var(--wcsd-navy-700);font-weight:600">m365.cloud.microsoft/teach</a> or in the Microsoft 365 Copilot app on web, Windows, or Mac. These three walkthroughs come straight from Microsoft's documentation. Microsoft updates Teach often, so a button may move, but the flow stays the same.</p>
 
         <div class="acc">
@@ -1790,13 +1800,13 @@ section.band{margin-bottom:54px}
 
         <p class="gnote">Teach also makes flashcards, and its Modify tools can align existing materials to standards, differentiate instructions, change reading level (with a glossary option), and add real-world, scientific, or historical examples. Fill-in-the-blanks is listed as coming soon. Teach is for faculty and staff with a district Microsoft 365 education license; students don't see it. If you don't see Teach, check with IT.</p>
 
-        <h2 class="h2sec"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="17" r="1.6"/></svg></span>Where it stumbles (and what to do)</h2>
+        <h2 class="h2sec"><span class="sdot stile navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="17" r="1.6"/></svg></span>Where It Stumbles (And What To Do)</h2>
         <div class="grid3">
           <div class="mini"><h3>Math and facts</h3><p>It's confident even when it's wrong. Check every number, date, and citation before it counts. Evaluate, Verify, Edit, Revise. You're responsible.</p></div>
           <div class="mini"><h3>Teacher-centered defaults</h3><p>First drafts of lessons skew lecture-heavy. Re-prompt: "Rebuild this around student discussion and a hands-on activity. Cut my talk time in half."</p></div>
           <div class="mini"><h3>Generic first answers</h3><p>A vague ask gets a vague answer. Give it a goal, context, expectations, and a source. The pattern below fixes most weak outputs.</p></div>
         </div>
-        <h2 class="h2sec"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>Writing strong prompts</h2>
+        <h2 class="h2sec"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>Writing Strong Prompts</h2>
         <p class="lede" style="margin-top:-2px">The full prompt structure, the five parts (Who, Why, What, And, How) and the good, better, best examples, lives on the <a href="#prompting" style="color:var(--wcsd-navy-700);font-weight:600">Prompting page</a>. One Copilot-specific tip: it doesn't save or share chats well, so when a prompt works, keep it.</p>
       </div>
     </div>
@@ -1813,14 +1823,14 @@ section.band{margin-bottom:54px}
         <div class="callout">
           <b>One article, every reading level in your room.</b> Every student gets the same ideas, the same standard, the same class discussion, each at a level they can comfortably access. Different on-ramps, same destination.
         </div>
-        <h2 class="h2sec first"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>How it works</h2>
+        <h2 class="h2sec first"><span class="sdot stile teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>How It Works</h2>
         <div class="steps">
           <div class="step"><span class="sn">1</span><h3>Feed it anything</h3><p>Paste a text, a topic, a YouTube link, or an article URL.</p></div>
           <div class="step"><span class="sn">2</span><h3>Pick your levels</h3><p>Choose grade or reading levels. Diffit rewrites the passage and keeps the core meaning.</p></div>
           <div class="step"><span class="sn">3</span><h3>Get the full packet</h3><p>Leveled passage, vocabulary list with definitions, and question sets, all generated together.</p></div>
           <div class="step"><span class="sn">4</span><h3>Edit and export</h3><p>Everything stays editable. Send to Google Docs, Slides, Forms, or print. You review before students see it.</p></div>
         </div>
-        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></span>Moves worth knowing</h2>
+        <h2 class="h2sec"><span class="sdot stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></span>Moves Worth Knowing</h2>
         <div class="grid2c">
           <div class="mini"><h3>For Special Education</h3><p>Re-level your core text to match <span class="dfn" tabindex="0" data-tip="Individualized Education Program: the legal plan for a student receiving special education services.">IEP</span> accommodation levels, chunk it into smaller sections, and generate comprehension checks at each level. Same rigor, accessible entry. Accommodations honored without building separate materials from scratch.</p></div>
           <div class="mini"><h3>For Multilingual Learners</h3><p>Generate the passage in English and a translated version side by side, add a vocabulary preview with student-friendly definitions, and pull sentence starters for discussion. For high-stakes family communication, have a human speaker verify the translation.</p></div>
@@ -1850,7 +1860,7 @@ section.band{margin-bottom:54px}
       <img class="hero-logo" src="logos/wcsd-logo-horizontal.png" alt="Washoe County School District logo">
     </div>
   </div>
-  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
+  <div class="teachtabs" role="navigation" aria-label="TEACH framework quick links"><div class="row"><a class="tab-t" href="#teach" data-anchor="t-t" aria-label="TEACH: Thoroughly Evaluate">T<em>Thoroughly Evaluate</em></a><a class="tab-e" href="#teach" data-anchor="t-e" aria-label="TEACH: Engage with Curriculum">E<em>Engage with Curriculum</em></a><a class="tab-a" href="#teach" data-anchor="t-a" aria-label="TEACH: Adhere to Approved Tools">A<em>Adhere to Approved Tools</em></a><a class="tab-c" href="#teach" data-anchor="t-c" aria-label="TEACH: Commit to Safe and Ethical Use">C<em>Commit to Safe &amp; Ethical Use</em></a><a class="tab-h" href="#teach" data-anchor="t-h" aria-label="TEACH: Harness the Potential">H<em>Harness the Potential</em></a></div></div>
   <div class="container spad">
     <nav class="jumps" aria-label="On this page">
       <span class="jlbl">On this page</span>
@@ -1861,7 +1871,7 @@ section.band{margin-bottom:54px}
       <a href="#pd-lit">AI literacy</a>
     </nav>
     <div class="panel acc-gold tint-warm" id="pd-nv">
-      <div class="secthead"><div class="stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></div><div><h2>Nevada first</h2><div class="ssm">Start local. These carry weight here.</div></div></div>
+      <div class="secthead"><div class="stile gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg></div><div><h2>Nevada First</h2><div class="ssm">Start local. These carry weight here.</div></div></div>
       <div class="grid2c">
         <div class="mini goldic">
           <h3>NWRPDP: The AI Frontier + regional trainings</h3>
@@ -1975,7 +1985,7 @@ section.band{margin-bottom:54px}
     </div>
 
     <div class="panel acc-green" id="pd-lit">
-      <div class="secthead"><div class="stile green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div><h2>AI literacy, any tool</h2><div class="ssm">Tool-agnostic foundations from Google, Code.org, Common Sense, and more.</div></div></div>
+      <div class="secthead"><div class="stile green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div><h2>AI Literacy, Any Tool</h2><div class="ssm">Tool-agnostic foundations from Google, Code.org, Common Sense, and more.</div></div></div>
       <div class="grid2c">
         <div class="mini">
           <h3>Generative AI for Educators</h3>
@@ -1988,12 +1998,7 @@ section.band{margin-bottom:54px}
           <p>Code.org's free video series with ETS, ISTE, and Khan Academy. The classic starting line for AI in the classroom.</p>
           <p style="margin-top:10px"><a class="cta sm soft" href="https://code.org/ai/pl/101" target="_blank" rel="noopener">Start the series</a></p>
         </div>
-        <div class="mini">
-          <h3>ChatGPT Foundations for K-12</h3>
-          <p style="margin:0 0 8px"><span class="chip teal">~1 hour</span> <span class="chip tool">Free certificate</span></p>
-          <p>Common Sense Education with OpenAI: about an hour on capabilities, limits, and safe classroom use. Free educator account required.</p>
-          <p style="margin-top:10px"><a class="cta sm soft" href="https://www.commonsense.org/education/training/chatgpt-k12-foundations" target="_blank" rel="noopener">Take the course</a></p>
-        </div>
+        
         <div class="mini">
           <h3>AI Basics for K-12 Teachers</h3>
           <p>Common Sense Education's foundational course: what AI is, how it works, safety, privacy, and ethics, with a reflection workbook.</p>
