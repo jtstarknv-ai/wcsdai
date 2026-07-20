@@ -1072,6 +1072,17 @@ section.band{margin-bottom:54px}
 .hs-item h3{font-size:14.5px;font-weight:800;color:var(--wcsd-navy-900);margin:0 0 3px;line-height:1.3}
 .hs-item p{font-size:12.5px;color:var(--wcsd-text-muted);line-height:1.55;margin:0}
 @media(max-width:560px){.hsheet{padding:24px 14px 12px}}
+
+/* ============ FAQ: TEACH sections as one row of columns ============ */
+.faqrow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:start;margin-bottom:18px}
+.faqrow .panel{margin:0;padding:16px 13px 14px}
+.faqrow .secthead{flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:10px}
+.faqrow .secthead h2{font-size:15px;line-height:1.25}
+.faqrow .stile{width:46px;height:46px;flex-shrink:0}
+.faqrow .acc .ah{padding:9px 8px;gap:6px}
+.faqrow .acc .ah span:first-child{font-size:12.3px;line-height:1.35}
+.faqrow .acc .ab{font-size:12px;line-height:1.55;padding:0 8px 10px}
+@media(max-width:1120px){.faqrow{grid-template-columns:1fr;gap:14px}.faqrow .secthead{flex-direction:row;text-align:left;align-items:center}.faqrow .secthead h2{font-size:17px}}
 </style>
 </head>
 
@@ -2061,6 +2072,7 @@ section.band{margin-bottom:54px}
   <div class="container spad">
     
     
+    <div class="faqrow">
     <div class="panel" id="faq-t" style="border-top:4px solid #01528A;scroll-margin-top:84px">
       <div class="secthead">
         <div class="stile" style="background:linear-gradient(135deg,#1B6FA8,#01528A);color:#fff;font-weight:900;font-size:21px">T</div>
@@ -2101,6 +2113,7 @@ section.band{margin-bottom:54px}
       <div class="acc"><button class="ah" aria-expanded="false"><span>What can I use AI for?</span><span class="car">&#8250;</span></button><div class="ab">Anything on the <a href="#library" style="color:var(--wcsd-navy-700);font-weight:600">AI Uses page</a>: instructional planning, instruction, student supports, assessment and reflection, and communication, each with ready prompts at elementary, middle, and high levels. Start with one task that eats your evenings.</div></div><div class="acc"><button class="ah" aria-expanded="false"><span>Why is our district supporting the use of AI?</span><span class="car">&#8250;</span></button><div class="ab">Used well, AI gives teachers time back for the work only humans can do, helps every student access grade-level content, and prepares our students for a world where AI is part of college, careers, and everyday life. The <span class="tclr"><i>T</i><i>E</i><i>A</i><i>C</i><i>H</i></span> framework exists so we get those benefits safely, with your judgment always in charge. The district's official AI page lives at <a href="https://www.washoeschools.net/directory/ai-artificial-intellegence" target="_blank" rel="noopener" style="color:var(--wcsd-navy-700);font-weight:600">washoeschools.net</a>.</div></div><div class="acc"><button class="ah" aria-expanded="false"><span>Are students currently permitted to use AI tools in the classroom in WCSD?</span><span class="car">&#8250;</span></button><div class="ab">Partly, and this is evolving: students currently have access to Microsoft Copilot, and the district is developing guidelines for student use now. Until those land, follow your school's direction for any student-facing use, and watch for official guidance soon.</div></div><div class="acc"><button class="ah" aria-expanded="false"><span>What if a parent asks me, "Do you use AI?"</span><span class="car">&#8250;</span></button><div class="ab">Answer honestly and simply: "Yes, I use AI as a professional tool to support planning and preparation, the way I use other educational technology. I review everything and align it to district curriculum and standards before it reaches the classroom." Families can also hear: student privacy is protected, AI never makes instructional decisions, and our adopted curriculum still guides instruction.</div></div><div class="acc"><button class="ah" aria-expanded="false"><span>What professional development opportunities are available to me?</span><span class="car">&#8250;</span></button><div class="ab">The <a href="#pd" style="color:var(--wcsd-navy-700);font-weight:600">Professional Learning page</a> collects free, verified options: Nevada-based trainings that carry PD credit, Copilot and tool-specific courses, and AI literacy certificates. District offerings are posted in MyPGS, and the Nevada Department of Education, NSEA, and WEA list more.</div></div>
     </div>
     
+    </div>
     <div class="panel" id="faq-glossary" style="scroll-margin-top:84px">
       <div class="secthead">
         <div class="stile" style="background:linear-gradient(135deg,#01406e,#002b54);color:#fff">
