@@ -1097,6 +1097,13 @@ section.band{margin-bottom:54px}
 /* ============ guardrail cards: centered bottom links ============ */
 .guards .gcard{display:flex;flex-direction:column}
 .guards .gcard .xlinks{margin-top:auto;padding-top:12px;display:flex;justify-content:center}
+
+/* ============ PD: attribute chips as plain text ============ */
+#pd .chip{background:none !important;border:none !important;padding:0;border-radius:0;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+#pd .chip.teal{color:#0B6E64}
+#pd .chip.tool{color:#8A6D00}
+#pd .chip+.chip{margin-left:14px;position:relative}
+#pd .chip+.chip::before{content:"\2022";position:absolute;left:-9px;color:#AEB9C4}
 </style>
 </head>
 
