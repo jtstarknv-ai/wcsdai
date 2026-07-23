@@ -1183,7 +1183,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[t
   <div class="navsearch">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
     <input id="siteSearch" type="search" placeholder="Search the Hub" aria-label="Search the whole Hub" autocomplete="off">
-    <div id="siteResults" role="listbox" aria-label="Search results" hidden></div>
+    <div id="siteResults" role="listbox" aria-label="Search results" aria-live="polite" hidden></div>
   </div>
   <div class="nava11y notranslate">
     <button id="a11yBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Accessibility options">
@@ -2709,6 +2709,7 @@ document.querySelectorAll('.ucopy').forEach(b=>b.addEventListener('click',()=>{
     tip.classList.remove('show');
   }
   document.addEventListener('mouseover',function(e){var el=e.target.closest?e.target.closest('.dfn'):null; if(el) show(el);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape') hide();});
   document.addEventListener('mouseout',function(e){var el=e.target.closest?e.target.closest('.dfn'):null; if(el) hide();});
   document.addEventListener('focusin',function(e){var el=e.target.closest?e.target.closest('.dfn'):null; if(el) show(el);});
   document.addEventListener('focusout',function(e){var el=e.target.closest?e.target.closest('.dfn'):null; if(el) hide();});
