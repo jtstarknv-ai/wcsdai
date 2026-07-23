@@ -1020,9 +1020,11 @@ section.band{margin-bottom:54px}
 /* ============ site-wide nav search ============ */
 .navsearch{position:relative;margin-left:auto;flex-shrink:0}
 .navsearch svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--wcsd-text-muted);pointer-events:none}
-#siteSearch{font-family:inherit;font-size:13px;color:var(--wcsd-navy-900);width:170px;height:35px;padding:8px 10px 8px 31px;
-  border:1.5px solid var(--wcsd-border);border-radius:999px;background:var(--wcsd-surface-2);transition:width .15s ease,border-color .15s ease,background .15s ease}
-#siteSearch:focus{outline:none;width:250px;border-color:var(--wcsd-navy-700);background:#fff;box-shadow:0 0 0 3px rgba(1,82,138,.14)}
+#siteSearch{font-family:inherit;font-size:13px;color:transparent;width:42px;height:35px;padding:8px 0 8px 30px;cursor:pointer;
+  border:1.5px solid var(--wcsd-border);border-radius:999px;background:var(--wcsd-surface-2);transition:width .15s ease,border-color .15s ease,background .15s ease,padding .15s ease}
+#siteSearch::placeholder{color:transparent}
+#siteSearch:focus::placeholder{color:var(--wcsd-text-muted)}
+#siteSearch:focus{outline:none;width:250px;padding:8px 10px 8px 31px;color:var(--wcsd-navy-900);cursor:text;border-color:var(--wcsd-navy-700);background:#fff;box-shadow:0 0 0 3px rgba(1,82,138,.14)}
 #siteResults{position:absolute;right:0;top:calc(100% + 8px);width:min(430px,90vw);max-height:60vh;overflow:auto;background:#fff;
   border:1px solid var(--wcsd-border-strong);border-radius:13px;box-shadow:0 14px 38px rgba(11,36,64,.22);padding:6px;z-index:400}
 #siteResults .sr{display:block;width:100%;text-align:left;font-family:inherit;background:#fff;border:none;border-radius:9px;padding:9px 11px;cursor:pointer}
@@ -1031,7 +1033,7 @@ section.band{margin-bottom:54px}
 #siteResults .sr span{display:flex;gap:7px;align-items:center;font-size:11px;color:var(--wcsd-text-muted);margin-top:2px}
 #siteResults .sr .pg{flex-shrink:0;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--wcsd-navy-700);background:var(--wcsd-navy-50);border-radius:5px;padding:2px 6px}
 #siteResults .none{font-size:12.5px;color:var(--wcsd-text-muted);padding:11px 12px}
-@media(max-width:880px){.navsearch{width:100%;margin-left:0}#siteSearch,#siteSearch:focus{width:100%}}
+@media(max-width:880px){.navsearch{width:100%;margin-left:0}#siteSearch,#siteSearch:focus{width:100%;color:var(--wcsd-navy-900);padding:8px 10px 8px 31px;cursor:text}#siteSearch::placeholder{color:var(--wcsd-text-muted)}}
 
 /* ============ Why We Prompt: chevron flow (A5) ============ */
 .wflow{display:flex;align-items:stretch;margin-top:6px;filter:drop-shadow(0 6px 14px rgba(11,36,64,.14))}
@@ -1122,6 +1124,41 @@ font font{background:transparent !important;box-shadow:none !important}
 /* ============ stoplight: means-lines hug the bottom ============ */
 .light{display:flex;flex-direction:column}
 .light .lsub{margin-top:auto}
+
+/* ============ accessibility toolkit ============ */
+.nava11y{position:relative;flex-shrink:0;display:flex;align-items:center;margin-left:10px}
+#a11yBtn{display:inline-flex;align-items:center;justify-content:center;gap:5px;width:58px;height:35px;cursor:pointer;
+  border:1.5px solid var(--wcsd-navy-300);border-radius:999px;background:var(--wcsd-navy-50);color:var(--wcsd-navy-700);
+  transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease}
+#a11yBtn svg{width:16px;height:16px;flex-shrink:0}
+#a11yBtn .tchev{width:11px;height:11px}
+#a11yBtn:hover,#a11yBtn[aria-expanded="true"]{border-color:var(--wcsd-navy-700);background:#DCEAF5}
+#a11yBtn:focus-visible{outline:none;border-color:var(--wcsd-navy-700);box-shadow:0 0 0 3px rgba(1,82,138,.22)}
+#a11yMenu{position:absolute;right:0;top:calc(100% + 8px);width:236px;background:#fff;border:1px solid var(--wcsd-border-strong);
+  border-radius:13px;box-shadow:0 14px 38px rgba(11,36,64,.22);padding:6px 6px 4px;z-index:400}
+#a11yMenu .tm-hd{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--wcsd-text-muted);padding:7px 12px 4px}
+.am-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px}
+.am-lbl{font-size:13px;font-weight:600;color:var(--wcsd-navy-900)}
+.am-seg{display:inline-flex;border:1.5px solid var(--wcsd-border);border-radius:9px;overflow:hidden}
+.az{font-family:inherit;font-weight:800;color:var(--wcsd-navy-900);background:#fff;border:none;cursor:pointer;padding:6px 9px;font-size:12px;line-height:1}
+.az.z1{font-size:14px}.az.z2{font-size:16px}
+.az+.az{border-left:1.5px solid var(--wcsd-border)}
+.az.on{background:var(--wcsd-navy-700);color:#fff}
+.az:focus-visible{outline:2px solid var(--wcsd-navy-700);outline-offset:-2px}
+#hcTgl{position:relative;width:42px;height:23px;border-radius:999px;border:1.5px solid var(--wcsd-border);background:#E3E9EF;cursor:pointer;flex-shrink:0;transition:background .15s ease}
+#hcTgl .knob{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(11,36,64,.35);transition:left .15s ease}
+#hcTgl.on{background:var(--wcsd-navy-700);border-color:var(--wcsd-navy-700)}
+#hcTgl.on .knob{left:21px}
+.am-note{font-size:10.5px;color:var(--wcsd-text-muted);padding:2px 12px 8px}
+@media(max-width:880px){.nava11y{margin-left:0}}
+/* ============ high contrast mode ============ */
+html.hc{--wcsd-text:#000;--wcsd-text-muted:#1A2430;--wcsd-text-subtle:#1A2430;--wcsd-border:#49525E;--wcsd-border-strong:#242E3A}
+html.hc body{background:#fff}
+html.hc .screen a:not(.cta):not(.ftab):not(.ucx-btn){text-decoration:underline}
+html.hc .chip,html.hc .dfn{font-weight:700}
+/* ============ ADA: reduced motion + visible keyboard focus ============ */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2.5px solid var(--wcsd-navy-700);outline-offset:2px}
 </style>
 </head>
 
@@ -1147,6 +1184,28 @@ font font{background:transparent !important;box-shadow:none !important}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
     <input id="siteSearch" type="search" placeholder="Search the Hub" aria-label="Search the whole Hub" autocomplete="off">
     <div id="siteResults" role="listbox" aria-label="Search results" hidden></div>
+  </div>
+  <div class="nava11y notranslate">
+    <button id="a11yBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Accessibility options">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.2"/><path d="M4.5 9.5c5 1.2 10 1.2 15 0"/><path d="M12 10.5v4"/><path d="m12 14.5-3 6"/><path d="m12 14.5 3 6"/></svg>
+      <svg class="tchev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="a11yMenu" hidden>
+      <div class="tm-hd">Accessibility</div>
+      <div class="am-row" role="group" aria-label="Text size">
+        <span class="am-lbl">Text size</span>
+        <span class="am-seg">
+          <button class="az" type="button" data-sz="0" aria-label="Normal text size">A</button>
+          <button class="az z1" type="button" data-sz="1" aria-label="Large text size">A+</button>
+          <button class="az z2" type="button" data-sz="2" aria-label="Largest text size">A++</button>
+        </span>
+      </div>
+      <div class="am-row">
+        <span class="am-lbl">High contrast</span>
+        <button id="hcTgl" type="button" role="switch" aria-checked="false" aria-label="High contrast mode"><span class="knob"></span></button>
+      </div>
+      <div class="am-note">Remembered on this device.</div>
+    </div>
   </div>
   <div class="navtrans notranslate">
     <button id="siteTransBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Translate this site">
@@ -2708,6 +2767,41 @@ document.querySelectorAll('.ucx').forEach(function(wrap){
     });
     if(empty) empty.style.display=shown?'none':'block';
   });
+})();
+
+/* ================= ACCESSIBILITY TOOLKIT ================= */
+(function(){
+  var btn=document.getElementById('a11yBtn'), menu=document.getElementById('a11yMenu');
+  if(!btn||!menu) return;
+  var KEY='aihub-a11y', st={size:0,hc:false};
+  try{var s=JSON.parse(localStorage.getItem(KEY)||'{}'); if(s&&typeof s==='object'){st.size=s.size||0; st.hc=!!s.hc;}}catch(e){}
+  var hcTgl=document.getElementById('hcTgl');
+  function apply(){
+    var z=[1,1.15,1.3][st.size]||1;
+    document.documentElement.style.zoom=(z===1?'':z);
+    document.documentElement.classList.toggle('hc',st.hc);
+    var az=menu.querySelectorAll('.az');
+    for(var i=0;i<az.length;i++){az[i].classList.toggle('on',i===st.size);}
+    if(hcTgl){hcTgl.setAttribute('aria-checked',st.hc?'true':'false'); hcTgl.classList.toggle('on',st.hc);}
+  }
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){} apply();}
+  menu.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('.az'):null;
+    if(b){st.size=parseInt(b.getAttribute('data-sz'),10)||0; save(); return;}
+    if(e.target.closest && e.target.closest('#hcTgl')){st.hc=!st.hc; save();}
+  });
+  function closeMenu(){menu.hidden=true; btn.setAttribute('aria-expanded','false');}
+  btn.addEventListener('click',function(){
+    if(menu.hidden){menu.hidden=false; btn.setAttribute('aria-expanded','true');}
+    else{closeMenu();}
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest||!e.target.closest('.nava11y')) closeMenu();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && !menu.hidden){closeMenu(); btn.focus();}
+  });
+  apply();
 })();
 
 /* ================= LANGUAGE TRANSLATOR ================= */
