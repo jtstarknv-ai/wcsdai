@@ -1020,11 +1020,9 @@ section.band{margin-bottom:54px}
 /* ============ site-wide nav search ============ */
 .navsearch{position:relative;margin-left:auto;flex-shrink:0}
 .navsearch svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--wcsd-text-muted);pointer-events:none}
-#siteSearch{font-family:inherit;font-size:13px;color:transparent;width:42px;height:35px;padding:8px 0 8px 30px;cursor:pointer;
-  border:1.5px solid var(--wcsd-border);border-radius:999px;background:var(--wcsd-surface-2);transition:width .15s ease,border-color .15s ease,background .15s ease,padding .15s ease}
-#siteSearch::placeholder{color:transparent}
-#siteSearch:focus::placeholder{color:var(--wcsd-text-muted)}
-#siteSearch:focus{outline:none;width:250px;padding:8px 10px 8px 31px;color:var(--wcsd-navy-900);cursor:text;border-color:var(--wcsd-navy-700);background:#fff;box-shadow:0 0 0 3px rgba(1,82,138,.14)}
+#siteSearch{font-family:inherit;font-size:13px;color:var(--wcsd-navy-900);width:170px;height:35px;padding:8px 10px 8px 31px;
+  border:1.5px solid var(--wcsd-border);border-radius:999px;background:var(--wcsd-surface-2);transition:width .15s ease,border-color .15s ease,background .15s ease}
+#siteSearch:focus{outline:none;width:250px;border-color:var(--wcsd-navy-700);background:#fff;box-shadow:0 0 0 3px rgba(1,82,138,.14)}
 #siteResults{position:absolute;right:0;top:calc(100% + 8px);width:min(430px,90vw);max-height:60vh;overflow:auto;background:#fff;
   border:1px solid var(--wcsd-border-strong);border-radius:13px;box-shadow:0 14px 38px rgba(11,36,64,.22);padding:6px;z-index:400}
 #siteResults .sr{display:block;width:100%;text-align:left;font-family:inherit;background:#fff;border:none;border-radius:9px;padding:9px 11px;cursor:pointer}
@@ -1033,7 +1031,7 @@ section.band{margin-bottom:54px}
 #siteResults .sr span{display:flex;gap:7px;align-items:center;font-size:11px;color:var(--wcsd-text-muted);margin-top:2px}
 #siteResults .sr .pg{flex-shrink:0;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--wcsd-navy-700);background:var(--wcsd-navy-50);border-radius:5px;padding:2px 6px}
 #siteResults .none{font-size:12.5px;color:var(--wcsd-text-muted);padding:11px 12px}
-@media(max-width:880px){.navsearch{width:100%;margin-left:0}#siteSearch,#siteSearch:focus{width:100%;color:var(--wcsd-navy-900);padding:8px 10px 8px 31px;cursor:text}#siteSearch::placeholder{color:var(--wcsd-text-muted)}}
+@media(max-width:880px){.navsearch{width:100%;margin-left:0}#siteSearch,#siteSearch:focus{width:100%}}
 
 /* ============ Why We Prompt: chevron flow (A5) ============ */
 .wflow{display:flex;align-items:stretch;margin-top:6px;filter:drop-shadow(0 6px 14px rgba(11,36,64,.14))}
